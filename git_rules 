@@ -1,3 +1,4 @@
+=============================================
 The seven rules of a great Git commit message
 
 Separate subject from body with a blank line.
@@ -7,3 +8,12 @@ Do not end the subject line with a period.
 Use the imperative mood in the subject line.
 Wrap the body at 72 characters.
 Use the body to explain what and why vs. how.
+==============================================
+
+git status
+
+
+git add / git add .
+
+
+git commit -m "Your message => refer to above rules"
