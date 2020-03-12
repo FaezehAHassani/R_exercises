@@ -1,25 +1,34 @@
+
+NOTE 1
 =============================================
 The seven rules of a great Git commit message
 
 Separate subject from body with a blank line.
 Limit the subject line to 50 characters.
-Capitalize the subject line.
+Capitalise the subject line.
 Do not end the subject line with a period.
 Use the imperative mood in the subject line.
 Wrap the body at 72 characters.
 Use the body to explain what and why vs. how.
 ==============================================
 
+
+STEP BY STEP MANUAL
+==============================================
+
 "Always in your local repo directory"
 
 
-Status check => git status
+Check on files changed => git status
+
+
+Check on commit history => git log
 
 
 Stage => git add FILENAME (specific to one file changed) / git add . (For all files changed)
 
 
-Commit => git commit -m "Your message => refer to above rules"
+Commit => git commit -m "Your message => refer to above NOTE 1"
 
 
 "Use Github desktop to link your local repo to your Github account previously defined repo"
