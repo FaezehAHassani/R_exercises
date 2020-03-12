@@ -16,10 +16,13 @@ Use the body to explain what and why vs. how.
 Status check => git status
 
 
-Stage => git add / git add .
+Stage => git add FILENAME (specific to one file changed) / git add . (For all files changed)
 
 
 Commit => git commit -m "Your message => refer to above rules"
+
+
+"Use Github desktop to link your local repo to your Github account previously defined repo"
 
 
 Push => git push => enter user and pass => refresh GitHub account to see changes
