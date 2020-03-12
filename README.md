@@ -16,7 +16,7 @@
 
 
 My reference book is:
-![programming skills for data science](/Users/faezeh/Desktop/project/refbook.jpg)
+For referring to an image on the local computer: add ![programming skills for data science](/Users/faezeh/Desktop/project/refbook.jpg)
 
 [programming skills for data science]https://github.com/FaezehAHassani/R-learning/blob/master/refbook.jpg
 
