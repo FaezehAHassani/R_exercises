@@ -18,4 +18,6 @@
 My reference book is:
 ![programming skills for data science](/Users/faezeh/Desktop/project/refbook.jpg)
 
+[programming skills for data science]https://github.com/FaezehAHassani/R-learning/blob/master/refbook.jpg
+
 `Fun fact: if you open a terminal in Mac and drag your file into the terminal, it will show the path to your file on your computer`
