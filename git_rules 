@@ -22,7 +22,7 @@ STEP BY STEP MANUAL
 Check on files changed => git status
 
 
-Check on commit history => git log
+Check on commit history => git log (all commits) / git log --oneline (note commit hash number)
 
 
 Stage => git add FILENAME (specific to one file changed) / git add . (For all files changed)
@@ -35,3 +35,5 @@ Commit => git commit -m "Your message => refer to above NOTE 1"
 
 
 Push => git push => enter user and pass => refresh GitHub account to see changes
+
+
