@@ -10,10 +10,16 @@ Wrap the body at 72 characters.
 Use the body to explain what and why vs. how.
 ==============================================
 
-git status
+"Always in your local repo directory"
 
 
-git add / git add .
+Status check => git status
 
 
-git commit -m "Your message => refer to above rules"
+Stage => git add / git add .
+
+
+Commit => git commit -m "Your message => refer to above rules"
+
+
+Push => git push => enter user and pass => refresh GitHub account to see changes
