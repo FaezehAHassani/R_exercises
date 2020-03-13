@@ -1,2 +1,19 @@
-Programming Skills for Data Science
-Hello to "R" learning!
+# Programming Skills for Data Science
+
+## Hello to _R_ learning!
+
+### From Mac terminal
+
+- type R in terminal
+
+- quit R by q()
+
+- Rscript fileNAME.R to rune your R file
+
+### R syntax
+
+- assign value to a variable use <- => number_of_days_in_a_month <- 30 or number_of_days_in_a_month <- "as I wish"
+
+- check a variable value => print(number_of_days_in_a_month)
+
+- selectively run a line in R codes by pressing at the end of each line `cmd+return/run`
