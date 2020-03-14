@@ -60,7 +60,45 @@ library("styler")
 lint("/Users/faezeh/Desktop/project/syntax_test.R")
 
 #make a new function
-make_full_name <- function(surename, family){
+make_full_name <- function(surename, family) {
   full_name <- paste(surename, family)
-  full_name}
-make_full_name("Faezeh","Hassani")
+  full_name  #return full name
+}
+make_full_name("Faezeh","Hassani") #example
+
+calculate_area <- function(width, height) {
+  area <- width * height 
+  area #return area
+}
+calculate_area(10, 1/2) #example
+
+#debug a function by giving value to variables and run line by line
+weightlbs <- 20 # first define value
+heightinches <- 10 # first define value
+#then run function line by line
+
+calculate_bmi <- function(weightlbs, heightinches) {
+  weightkg <- weightlbs * 0.453592
+  heightm <- heightinches * 0.0254
+  bmi <- weightkg / heightm ^ 2
+  bmi
+}
+#then delete pre-defined values
+calculate_bmi(20, 5) #example
+
+
+#check error
+condition_soup_temp <- function(temp) {
+  if (36 < soup_temp < 40) {
+  status <- "perfect soup temp"
+  } else if (temp > 40) {
+  status <- "too hot"
+  } else {
+  status <- "too cold"
+  }
+  status
+}
+condition_soup_temp(50)
+condition_soup_temp(38)
+condition_soup_temp(35)
+
