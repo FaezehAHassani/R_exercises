@@ -86,19 +86,31 @@ calculate_bmi <- function(weightlbs, heightinches) {
 #then delete pre-defined values
 calculate_bmi(20, 5) #example
 
-
-#check error
-condition_soup_temp <- function(temp) {
-  if (36 < soup_temp < 40) {
-  status <- "perfect soup temp"
-  } else if (temp > 40) {
-  status <- "too hot"
+#function with if loop
+condition_soup_temp <- function(soup_temp) {
+  if (soup_temp < 40 & soup_temp > 36) {  # (36 < soup_temp < 40) is wrong
+    status <- "perfect soup temp"
+  } else if (soup_temp > 40) {
+    status <- "too hot"
   } else {
-  status <- "too cold"
+    status <- "too cold"
   }
   status
 }
-condition_soup_temp(50)
-condition_soup_temp(38)
-condition_soup_temp(35)
+condition_soup_temp(50) # exmaple
+condition_soup_temp(38) # exmaple
+condition_soup_temp(35) # exmaple
 
+add_title <- function(full_name, title) {
+  if (startsWith(full_name, title)) {
+    return(full_name)
+  }
+  name_with_title <- paste(title, full_name)
+  name_with_title
+}
+
+full_name <- "Dr faezeh arab hassani"
+title <- "Dr"
+add_title(full_name, title) # example
+
+startsWith(full_name, title) #gives True or Fulse
