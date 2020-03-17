@@ -164,3 +164,23 @@ print(band)
 shoe_size <- c(3, 4.5, 6, 9, 2.5)
 small_shoe_size <- shoe_size < 4.5
 print(shoe_size[small_shoe_size])
+
+prices <- c(20, 30, 40)
+length(prices)
+new_price <- 45
+new_index <- length(prices) + 1
+prices[1] <- 20.1 # modify index 1
+prices[new_index] <- 45 # add inedex 4
+print(prices)
+prices[c(1, 2)] <- c(20.2, 30.1)
+print(prices)
+
+people[c(2,3)] <- c("emma", "gerald")
+people[5] <- "jim" #if no index 4 is available and you are adding index 5, returns NA for index 4
+print(people)
+more_people <- c(people, "faezeh")
+print(more_people)
+
+v4 <- c(0, 10, 5, 220, 1.1, 2, 5, 20, 2.5, 4)
+v4[v4 > 10] <- 10
+print(v4)

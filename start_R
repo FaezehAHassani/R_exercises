@@ -17,3 +17,6 @@
 - check a variable value => print(number_of_days_in_a_month)
 
 - selectively run a line in R codes by pressing at the end of each line `cmd+return/run`
+
+
+#### Always check the last value for the variable in 'Global Environment' panel of R studio if all the variables were printed
