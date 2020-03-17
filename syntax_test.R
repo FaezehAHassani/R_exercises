@@ -114,3 +114,53 @@ title <- "Dr"
 add_title(full_name, title) # example
 
 startsWith(full_name, title) #gives True or Fulse
+
+#vector
+people <- c("ana", "ellen", "adam")
+print(people)
+print(people[1])
+print(people[2])
+print(people[4]) #returns NA
+all_but_adam <- people[-3] # to exclude index 3: adam
+print(all_but_adam) # returns "ana"   "ellen"
+print(people[2:3])
+indices <- c(1,3)
+print(people[indices]) # returns "ana"  "adam"
+
+
+v1 <- c(1, 2, 3, 4)
+v2 <- c(-1, 0, 8, -100)
+v3 <- v1 + v2
+print(v3)
+
+# un-equal vectors
+v1 <- c(1, 2)
+v2 <- c(-1, 0, 8, -100)
+v3 <- v1 + v2
+print(v3)
+
+#add a scalar to a vector
+v2 <- c(-1, 0, 8, -100)
+v3 <- 5 + v2 #recycling happens
+print(v3)
+
+nchar(v3) #lenght of each element in vector v3 and returns 1 1 2 3
+
+name <- "faezeh"
+nchar(name) #number of characters in faezeh and returns 6
+length(name) #consider faezeh as 1-element vector and returns 1
+
+v1 <- c(1.34, 0.9998, 100.971, -19)
+v2 <- round(v1, 2)
+v3 <- nchar(v1)
+print(v2)
+print(v3)
+
+colors <- c("green", "blue")
+locations <- c("sky", "grass")
+band <- paste(locations, colors, sep = "") #no seperation between words
+print(band)
+
+shoe_size <- c(3, 4.5, 6, 9, 2.5)
+small_shoe_size <- shoe_size < 4.5
+print(shoe_size[small_shoe_size])
