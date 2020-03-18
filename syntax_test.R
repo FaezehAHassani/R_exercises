@@ -241,5 +241,8 @@ job_post$qualification$bsc_degree #chaining $sign to access elements of a list i
 
 job_post$skills[3]
 
-
+#add a vector function e.g. paste to all the elements of a list 
+people_2 <- list("emma", "mat", "jack", "gil")
+people_2_upper_case <- lapply(people_2, toupper) #make names upper case
+people_2_party <- lapply(people_2, paste, "dances") # in this case no need to call actual paste()
 
