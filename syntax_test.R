@@ -184,3 +184,41 @@ print(more_people)
 v4 <- c(0, 10, 5, 220, 1.1, 2, 5, 20, 2.5, 4)
 v4[v4 > 10] <- 10
 print(v4)
+
+person <- list(
+  full_name = "ellen adams",
+  job = "engineer",
+  salary = 2000,
+  permanent = TRUE,
+  favourite = list( # if don't space for the next list inside list, it will not return a list under current list but a seperate list
+    food = "pizza", 
+    music = "jazz"
+    )
+)
+person$job
+
+person_favourite <- person$favourite #how to refer to a list in a list
+person_favourite$food
+
+person[[1]]
+person[[5]] #returns "jazz"
+person[["salary"]] # for list in list e.g. person[["music"]] returns NULL maybe better to use element number instead
+
+person_alternative <- list("bob fallon", "painter", 1000, TRUE)
+
+job_post <- list(
+  qualification = list(
+    experience = "5 years",
+    bsc_degree = TRUE
+  ),
+  skills = c("metlab", "r", "tcad")
+)
+
+job_qualifications <- job_post$qualification
+job_qualifications$bsc_degree
+
+#or
+job_post$qualification$bsc_degree #chaining $sign to access elements of a list in a list
+
+job_post$skills[3]
+
