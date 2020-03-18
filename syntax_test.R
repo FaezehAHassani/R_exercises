@@ -206,6 +206,22 @@ person[["salary"]] # for list in list e.g. person[["music"]] returns NULL maybe 
 
 person_alternative <- list("bob fallon", "painter", 1000, TRUE)
 
+person$age #returns NULL
+
+person$age <- 40
+person$age
+
+person$job <- "senior engineer"
+print(person$job)
+
+person$salary <- person$salary * 2
+print(person$salary)
+
+person$full_name <- NULL # for security reasons remove full_name
+print(person$full_name) #returns NULL
+
+person$full_name <- paste("ellen", "kimmel") # re-add full_name
+
 job_post <- list(
   qualification = list(
     experience = "5 years",
@@ -221,4 +237,6 @@ job_qualifications$bsc_degree
 job_post$qualification$bsc_degree #chaining $sign to access elements of a list in a list
 
 job_post$skills[3]
+
+
 
