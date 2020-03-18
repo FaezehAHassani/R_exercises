@@ -24,4 +24,4 @@
 
 ## _Fun facts:_
 - shift + 4 is dollar sign
-- double [[]] returns a vector of a list whereas [] returns a list
+- double [[]] returns a vector of a list whereas [] returns a list => so better to use [[]] or $ to access the elements of a list
