@@ -246,3 +246,9 @@ people_2 <- list("emma", "mat", "jack", "gil")
 people_2_upper_case <- lapply(people_2, toupper) #make names upper case
 people_2_party <- lapply(people_2, paste, "dances") # in this case no need to call actual paste()
 
+greet <- function(item) {
+  paste ("Hello", item) 
+}
+greetings <- lapply(people_2, greet)
+
+sapply(people, greet) # for apply a function to a vector
