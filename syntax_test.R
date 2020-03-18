@@ -222,6 +222,9 @@ print(person$full_name) #returns NULL
 
 person$full_name <- paste("ellen", "kimmel") # re-add full_name
 
+person[["job"]]
+is.list(person[["job"]]) # double bracket reurns vector not a list
+
 job_post <- list(
   qualification = list(
     experience = "5 years",

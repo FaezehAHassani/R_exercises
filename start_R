@@ -22,4 +22,6 @@
 #### Always check the last value for the variable in 'Global Environment' panel of R studio if all the variables were printed
 
 
-Fun fact: shift + 4 is dollar sign
+## _Fun facts:_
+- shift + 4 is dollar sign
+- double [[]] returns a vector of a list whereas [] returns a list
