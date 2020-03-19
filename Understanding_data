@@ -1,0 +1,22 @@
+# Where data comes from?
+- Sensors
+- Surveys
+- Record keeping
+- Secondary data analysis
+
+# Where to find data?
+- Government publications open to public
+- News and journalism
+- Social networks and media organisations
+- Scientific research
+- Online communities
+
+# Data types in _R_
+- Nominal often called categorical: Non-ordered, represented by strings, use for classification, cannot perform mathematical analysis on them
+  **e.g. fruits: banana, apple, orange, etc.**
+- Ordinal: Order for nominal categories, can sort, can find min, max, median but cannot perform statistical mean (note: median is the value separating the higher half from the lower half of a data sample, a population or a probability distribution.)
+  **e.g. hotel rating: 5-star, 4-star, etc.**
+- Ratio often called continuous data: Set zero, most common-level of world-data, can perform mathematical and statistical analysis
+  **e.g. length: 1 inch, 2 inch, etc.**
+- Interval: No set zero,
+  **e.g. date: 01/02/2019, 04/07/2020, etc.**
