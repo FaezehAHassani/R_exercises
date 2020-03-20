@@ -20,3 +20,20 @@
   **e.g. length: 1 inch, 2 inch, etc.**
 - Interval: No set zero,
   **e.g. date: 01/02/2019, 04/07/2020, etc.**
+
+# Data structure
+  - Data are presented in tables, each row (i.e. 1 to 4 in the table below) is a _record/observation_ and each column (i.e. Height, and weight) is a _feature_. Each _cell_ can itself be a vector or a table.
+  - Below dataset has a dimension of 4 by 2.
+  |         | Name     | Height  | Weight  |
+  | :-------| :------  |:------  |:------  |
+  | 1       |    Ana   |65       |30       |
+  | 2       |    Abi   |76       |10       |
+  | 3       |    Joe   |22       |30       |
+  | 4       |    Ted   |100      |40       |
+
+# Interpreting data
+- Gain knowledge on data features and problem domain
+- Understand data schema: what meta-data (data of data) is available to help you understand the dataset? who produced the data? what features the data has? learn the acronyms.
+
+# Using data to answer questions
+- Make sure you understand the question that you want to solve by using data
