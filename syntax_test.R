@@ -252,3 +252,28 @@ greet <- function(item) {
 greetings <- lapply(people_2, greet)
 
 sapply(people, greet) # for apply a function to a vector
+
+# create data frame
+people <- data.frame(
+  name = c("ebi", "elena", "roy" , "jade", "mark","abba"),
+  weight = c(40, 50, 75, 48, 80, 55),
+  heigth = c(157, 200, 159, 170, 190, 160),
+  sex = c("male", "female", "male", "male", "male", "female"),
+  age =c(20, 30, 50 , 80, 10, 37)
+) 
+people_sex <- people$sex
+print(people_sex)
+people_heigth <- people[["heigth"]]
+print(people_heigth)
+nrow(people) # number of rows
+ncol(people) # number of columns
+dim(people) # dimension of data frame
+colnames(people) # column names
+rownames(people) # row names
+head(people) # return first few rows of data frame as a new data frame
+tail(people) # return last few rows of data frame as a new data frame
+View(people) # view data frame in a spreedsheet-like viewer
+# modify column names
+new_col_names <- c("first_name", "person_weight", "person_heigth", "person_sex", "person_age")
+colnames(people) <- new_col_names
+View(people)
