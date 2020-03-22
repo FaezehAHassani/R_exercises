@@ -113,7 +113,7 @@ full_name <- "Dr faezeh arab hassani"
 title <- "Dr"
 add_title(full_name, title) # example
 
-startsWith(full_name, title) #gives True or Fulse
+startsWith(full_name, title) #gives True or Fulse 
 
 #vector
 people <- c("ana", "ellen", "adam")
@@ -277,3 +277,13 @@ View(people) # view data frame in a spreedsheet-like viewer
 new_col_names <- c("first_name", "person_weight", "person_heigth", "person_sex", "person_age")
 colnames(people) <- new_col_names
 View(people)
+
+# filtering a data frame
+people[2:4, ] # return a data frame of rows 2 to 4 and all columns
+people[2:4, "person_sex"] # return a data farme of rows 2 to 4 and column of person_sex
+
+rownames(people) <- people$first_name
+print(rownames(people)) # assign a row name to a vector in this case first_name column
+
+people[,c("person_weight", "person_heigth")] # return all rows and columns "person_weight" and "person_heigth"
+people[people$person_age > 10, ] #return rows where person_age is above 10 for all columns 
