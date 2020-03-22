@@ -1,5 +1,6 @@
 # What is data frame?
 - Data frame is a table. Each column in this table is a vector.
 
-# Note
-Extracting/ filtering more than one columns will return a data frame while filtering one column returns a vector
+# Tip
+- Extracting/ filtering more than one columns will return a data frame while filtering one column returns a vector
+- Always filter a column by its string name rather than its index

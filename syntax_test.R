@@ -133,6 +133,15 @@ v2 <- c(-1, 0, 8, -100)
 v3 <- v1 + v2
 print(v3)
 
+is.data.frame(v3) # define if v3 is data frame which is not so it returns FALSE
+as.data.frame(v3) # convert v3 from vector to data frame but temporarily
+vector_frame <- data.frame( #convert 
+  v1 = c(1, 2, 3, 4),
+  v2 = c(-1, 0, 8, -100),
+  as.data.frame(v3)
+)
+is.data.frame(vector_frame) #return TRUE
+
 # un-equal vectors
 v1 <- c(1, 2)
 v2 <- c(-1, 0, 8, -100)
@@ -287,3 +296,6 @@ print(rownames(people)) # assign a row name to a vector in this case first_name 
 
 people[,c("person_weight", "person_heigth")] # return all rows and columns "person_weight" and "person_heigth"
 people[people$person_age > 10, ] #return rows where person_age is above 10 for all columns 
+
+# define if people is a data frame or not
+is.data.frame(people)
