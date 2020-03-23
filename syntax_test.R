@@ -301,7 +301,10 @@ people[people$person_age > 10, ] #return rows where person_age is above 10 for a
 is.data.frame(people)
 
 # Use File/New File/Text File, add your data frame rows and columns separated by comma, save file as .csv and run below to read such file files
-my_df <- read.csv("new_data2.csv", stringsAsFactors = FALSE)
+my_df <- read.csv("new_data2.csv", stringsAsFactors = FALSE) # use stringsAsFactors to make sure strig data is a vector rather than a factor
+View(my_df)
+# write to the new data frame
+write.csv(my_df, "new_data3.csv", row.names = FALSE) # row.names to remove the row names
 View(my_df)
 
 # import added data frame that built in Atom by: File/Import Dataset/From Text (base)" 
