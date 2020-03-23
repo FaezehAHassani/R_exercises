@@ -313,3 +313,12 @@ print(new_data)
 getwd() # to check the working directory, return "/Users/faezeh"
 
 # Use Session/Set Working Directory/Tp Source File Location to change the dirctory above "/Users/faezeh" to the repository
+
+is.factor(my_df$name) # because I used strimgsAsFactors while adding the new created data frame, the column of "name" is not considered a Factor. When the values are in sting format, R automatically dedicate a Lvel to the sting vluses to reduce svaing space
+
+# also by using as.factor we can turn string values to level thus return factor
+shirt_size <- c("large", "medium", "small", "large", "small")
+shirt_size_factor <- as.factor(shirt_size)
+print(shirt_size_factor) # return large  medium small  large  small Levels: large medium small
+print(shirt_size) # return "large"  "medium" "small"  "large"  "small" 
+length(shirt_size_factor) # still return the number of vector not the levels
