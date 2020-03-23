@@ -4,3 +4,6 @@
 # Tip
 - Extracting/ filtering more than one columns will return a data frame while filtering one column returns a vector
 - Always filter a column by its string name rather than its index
+
+# Working with comma-separated value (CSV)
+- Construct your own data frames by entering rows and columns separated by comma and store them in "file_name".csv
