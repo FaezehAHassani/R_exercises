@@ -309,3 +309,7 @@ View(my_df)
 
 # import added data frame that built in Atom by: File/Import Dataset/From Text (base)" 
 print(new_data)
+
+getwd() # to check the working directory, return "/Users/faezeh"
+
+# Use Session/Set Working Directory/Tp Source File Location to change the dirctory above "/Users/faezeh" to the repository
