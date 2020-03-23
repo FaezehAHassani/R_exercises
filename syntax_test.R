@@ -299,3 +299,10 @@ people[people$person_age > 10, ] #return rows where person_age is above 10 for a
 
 # define if people is a data frame or not
 is.data.frame(people)
+
+# Use File/New File/Text File, add your data frame rows and columns separated by comma, save file as .csv and run below to read such file files
+my_df <- read.csv("new_data2.csv", stringsAsFactors = FALSE)
+View(my_df)
+
+# import added data frame that built in Atom by: File/Import Dataset/From Text (base)" 
+print(new_data)
