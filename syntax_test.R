@@ -322,3 +322,8 @@ shirt_size_factor <- as.factor(shirt_size)
 print(shirt_size_factor) # return large  medium small  large  small Levels: large medium small
 print(shirt_size) # return "large"  "medium" "small"  "large"  "small" 
 length(shirt_size_factor) # still return the number of vector not the levels
+
+num_factors <- as.factor(c(10, 20, 30, 10, 20 ,30, 40, 50)) # return 10 20 30 10 20 30 40 50 Levels: 10 20 30 40 50
+print(num_factors)
+num_factors * 2 # becuse turned vaector to factor cannot apply operation to all varaiables
+num_factors[1] <- 60 # because entered value is above the levels defined it return "invalid factor level, NA generated"
