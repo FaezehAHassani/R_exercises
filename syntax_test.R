@@ -322,8 +322,32 @@ shirt_size_factor <- as.factor(shirt_size)
 print(shirt_size_factor) # return large  medium small  large  small Levels: large medium small
 print(shirt_size) # return "large"  "medium" "small"  "large"  "small" 
 length(shirt_size_factor) # still return the number of vector not the levels
+is.factor(shirt_size) #return FALSE
 
 num_factors <- as.factor(c(10, 20, 30, 10, 20 ,30, 40, 50)) # return 10 20 30 10 20 30 40 50 Levels: 10 20 30 40 50
 print(num_factors)
 num_factors * 2 # becuse turned vaector to factor cannot apply operation to all varaiables
 num_factors[1] <- 60 # because entered value is above the levels defined it return "invalid factor level, NA generated"
+
+bag <- c("leather", "cotton", "pvc", "cotton", "pvc", "leather")
+cost <- c(1000, 200, 300, 250, 350, 1000)
+bag_factor <- data.frame(bag, cost)
+is.factor(bag_factor$bag) # beacuse didn't use stringsAcFactor = FALSE it returns TRUE
+is.factor(bag_factor$cost)
+bag_factor[1,2] <- 2000 # change 1000 to 2000
+bag_factor[1,1] <- "pf" # as bag is factor it cannot change to a variable rather than its pre-deficed levels, return:10 20 30 10 20 30 40 50 Levels: 10 20 30 40 50
+View(bag_factor)
+# if change the above command to below it convert bag to vector
+bag_factor <- data.frame(bag, cost, stringsAsFactors = FALSE)
+is.factor(bag_factor$bag) # return FALSE
+View(bag_factor)
+bag_factor[1,1] <- "pf" # can change to pf as bag is not factor anymore
+View(bag_factor)
+
+# take advantage of factor for splitting
+bag <- c("leather", "cotton", "pvc", "cotton", "pvc", "leather")
+cost <- c(1000, 200, 300, 250, 350, 1000)
+bag_factor <- data.frame(bag, cost)
+bag_factor_type <- split(bag_factor, bag_factor$bag)
+View(bag_factor_type)
+tapply(bag_factor$cost, bag_factor$bag, mean) # first is the variable that mean is applying to
