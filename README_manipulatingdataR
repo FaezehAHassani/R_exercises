@@ -1,0 +1,19 @@
+# use dplyr to manipulate data
+- dplyr package is: _A Grammar of Data Manipulation_
+- it helps you to perform important tasks such as:
+ - select
+ - filter
+ - mutate: add more column/feature
+ - arrange: rows in a particular order
+ - summarise: e.g. mean, median, or maximum
+ - join: multiple data frame
+
+## intstal extrernal package for dplyr
+ `install.package("dplyr")`
+
+ `library("dplyr")`
+
+ ## use a real data frame example "U.S. presidential elections"
+ `install.package("pscl")`
+
+ `library("pscl")`
