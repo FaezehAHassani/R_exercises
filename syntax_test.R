@@ -380,10 +380,19 @@ View(presidentialElections2)
 
 ?rename #get help on rename
 
+# to add column
 presidentialElections <- mutate(
   presidentialElections,
   other_parties_vote = 100 - demVote,
   abs_vote_difference = abs(demVote - other_parties_vote)
+)
+View(presidentialElections)
+
+# to arrange column
+presidentialElections <- arrange(
+  presidentialElections,
+  desc(year), # equivalent to - year, arrange "year" column in decreasing order
+  demVote # arrange "demVote" order in increasing order
 )
 View(presidentialElections)
 # if a data frame has row names (presidentialElections doesn't have row names), you can use bleow line to add rownames as new column 
