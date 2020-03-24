@@ -9,11 +9,11 @@
  - join: multiple data frame
 
 ## intstal extrernal package for dplyr
- `install.package("dplyr")`
+ `install.packages("dplyr")`
 
  `library("dplyr")`
 
  ## use a real data frame example "U.S. presidential elections"
- `install.package("pscl")`
+ `install.packages("pscl")`
 
  `library("pscl")`
