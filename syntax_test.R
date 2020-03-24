@@ -360,3 +360,15 @@ library("dplyr")
 install.packages("pscl")
 library("pscl")
 View(presidentialElections)
+
+votes <- select(presidentialElections, year, demVote) # equivalent to below Rsyntax, remember column nale is not character string, it's varaiable!
+votes <- presidentialElections[, c("year", "demVote")]
+View(votes)
+select(presidentialElections, -south) # equivalent to below
+select(presidentialElections, state:year)
+
+install.packages("tidyverse") # this package includes ggplot2 for visualisation
+library("tidyverse")
+
+
+
