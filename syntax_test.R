@@ -356,6 +356,9 @@ tapply(bag_factor$cost, bag_factor$bag, mean) # first is the variable that mean 
 install.packages("dplyr")
 library("dplyr")
 
+install.packages("tidyverse") # this package includes ggplot2 for visualisation
+library("tidyverse")
+
 # instal one real data frame example
 install.packages("pscl")
 library("pscl")
@@ -366,10 +369,24 @@ votes <- presidentialElections[, c("year", "demVote")]
 View(votes)
 select(presidentialElections, -south) # equivalent to below
 select(presidentialElections, state:year)
-pull(presidentialElections, state) # extract a column in dplyr
+pull(presidentialElections, state) # extract a column in dplyr, equivalent to R syntax below
+presidentialElections$state
+votes_colorado_2008 <- filter(presidentialElections, year == 2008, state == "Colorado") # to filter specific rows
+print(votes_colorado_2008)
+# rename a column
+select(presidentialElections,demVote)
+presidentialElections2 <- rename(presidentialElections, demvote = demVote)
+View(presidentialElections2)
 
-install.packages("tidyverse") # this package includes ggplot2 for visualisation
-library("tidyverse")
+?rename #get help on rename
 
+presidentialElections <- mutate(
+  presidentialElections,
+  other_parties_vote = 100 - demVote,
+  abs_vote_difference = abs(demVote - other_parties_vote)
+)
+View(presidentialElections)
+# if a data frame has row names (presidentialElections doesn't have row names), you can use bleow line to add rownames as new column 
+# df <- mutate(df, row_names = rownames(df))
 
 
