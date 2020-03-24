@@ -366,6 +366,7 @@ votes <- presidentialElections[, c("year", "demVote")]
 View(votes)
 select(presidentialElections, -south) # equivalent to below
 select(presidentialElections, state:year)
+pull(presidentialElections, state) # extract a column in dplyr
 
 install.packages("tidyverse") # this package includes ggplot2 for visualisation
 library("tidyverse")
