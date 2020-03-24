@@ -351,3 +351,12 @@ bag_factor <- data.frame(bag, cost)
 bag_factor_type <- split(bag_factor, bag_factor$bag)
 View(bag_factor_type)
 tapply(bag_factor$cost, bag_factor$bag, mean) # first is the variable that mean is applying to
+
+# install dplyr
+install.packages("dplyr")
+library("dplyr")
+
+# instal one real data frame example
+install.packages("pscl")
+library("pscl")
+View(presidentialElections)
