@@ -430,6 +430,18 @@ summarise(
   biggest_landslide = furthest_from_50(demVote)
 )
 
+# call function within function without adding extra variables, start from the most inner function to the outest function
+most_demvote_state_2008 <- select(
+  filter( 
+    filter(
+     presidentialElections,
+     year == 2008
+    ),
+  demVote == max(demVote)
+  ),
+state
+)
+
 # if a data frame has row names (presidentialElections doesn't have row names), you can use bleow line to add rownames as new column 
 # df <- mutate(df, row_names = rownames(df))
 
