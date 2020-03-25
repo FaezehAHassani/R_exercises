@@ -421,7 +421,14 @@ average_vote <- summarise(
 )
 
 # define a function to call a vector, perform a task on that, and use that function in summarise  
-furthest_from_50
+furthest_from_50 <- function(vec) {
+  adjusted_values <- vec - 50
+  vec[abs(adjusted_values) == max(abs(adjusted_values))]
+}
+summarise(
+  presidentialElections,
+  biggest_landslide = furthest_from_50(demVote)
+)
 
 # if a data frame has row names (presidentialElections doesn't have row names), you can use bleow line to add rownames as new column 
 # df <- mutate(df, row_names = rownames(df))
