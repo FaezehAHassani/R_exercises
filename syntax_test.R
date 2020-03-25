@@ -395,6 +395,18 @@ presidentialElections <- arrange(
   demVote # arrange "demVote" order in increasing order
 )
 View(presidentialElections)
+
+
+# to summarise a column by using mean, median, or max
+average_vote <- summarise(
+  presidentialElections,
+  mean_demVote = mean(demVote), # equivalent to - year, arrange "year" column in decreasing order
+  mean_other_parties_vote = mean(other_parties_vote) # arrange "demVote" order in increasing order
+)
+
+
+
+
 # if a data frame has row names (presidentialElections doesn't have row names), you can use bleow line to add rownames as new column 
 # df <- mutate(df, row_names = rownames(df))
 
