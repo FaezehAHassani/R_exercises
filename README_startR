@@ -18,6 +18,7 @@
 
 - selectively run a line in R codes by pressing at the end of each line `cmd+return/run`
 
+- access the list of all shortcuts in R by `option+shift+k`
 
 #### Always check the last value for the variable in 'Global Environment' panel of R studio if all the variables were printed
 

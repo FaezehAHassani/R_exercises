@@ -413,7 +413,7 @@ presidentialElections <- arrange(
 View(presidentialElections)
 
 
-# to summarise a column by using mean, median, or max
+K# to summarise a column by using mean, median, or max
 average_vote <- summarise(
   presidentialElections,
   mean_demVote = mean(demVote), # equivalent to - year, arrange "year" column in decreasing order
