@@ -1,3 +1,6 @@
+##### BASIC R SYNTAX ######
+##################################################
+
 # Calculate the number of minutes in a year
 minutes_in_a_year <- 365 * 24 * 60
 print(minutes_in_a_year)
@@ -16,7 +19,7 @@ print(my_integer)
 my_complex_number <- 2i - 9
 print(my_complex_number)
 
-#?sum  or ??sum
+#?sum  or ??sum to get help on a syntax
 
 example(print)
 
@@ -47,6 +50,9 @@ paste("hi", "mom", sep = "   ")
 
 "+" (2, 3) #means 2+3
 
+######### PACKAGES FOR A BETTER STYLE CODES ##########
+#########################################################
+
 install.packages("stringr") 
 library("stringr")
 str_count("ikjgdjhi", "i")
@@ -59,6 +65,8 @@ install.packages("styler")
 library("styler")
 lint("/Users/faezeh/Desktop/project/syntax_test.R")
 
+######## FUNCTION & IF/ELSE LOOP #################
+####################################
 #make a new function
 make_full_name <- function(surename, family) {
   full_name <- paste(surename, family)
@@ -115,7 +123,9 @@ add_title(full_name, title) # example
 
 startsWith(full_name, title) #gives True or Fulse 
 
-#vector
+####### VECTOR & LIST ##################
+###################################
+
 people <- c("ana", "ellen", "adam")
 print(people)
 print(people[1])
@@ -262,6 +272,9 @@ greetings <- lapply(people_2, greet)
 
 sapply(people, greet) # for apply a function to a vector
 
+############ DATA FRAME & LOAD OUTSIDE CSV ##################
+############################################
+
 # create data frame
 people <- data.frame(
   name = c("ebi", "elena", "roy" , "jade", "mark","abba"),
@@ -352,6 +365,9 @@ bag_factor_type <- split(bag_factor, bag_factor$bag)
 View(bag_factor_type)
 tapply(bag_factor$cost, bag_factor$bag, mean) # first is the variable that mean is applying to
 
+######### DPLYR & USE REAL DATA SETS ##################
+########################################################
+
 # install dplyr
 install.packages("dplyr")
 library("dplyr")
@@ -404,8 +420,8 @@ average_vote <- summarise(
   mean_other_parties_vote = mean(other_parties_vote) # arrange "demVote" order in increasing order
 )
 
-
-
+# define a function to call a vector, perform a task on that, and use that function in summarise  
+furthest_from_50
 
 # if a data frame has row names (presidentialElections doesn't have row names), you can use bleow line to add rownames as new column 
 # df <- mutate(df, row_names = rownames(df))
