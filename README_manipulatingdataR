@@ -17,3 +17,5 @@
  `install.packages("pscl")`
 
  `library("pscl")`
+
+ Note: If by mistake you re-wrote a downloaded data frame, re-start Rstudio and install the data frame package again
