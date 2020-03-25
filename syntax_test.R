@@ -442,6 +442,13 @@ most_demvote_state_2008 <- select(
 state
 )
 
+# The Pipe operator: an equivalent for above lines is using "pipe" lines blow, in this case we start from inner function compared to the baove method
+most_demvote_state_2008 <- presidentialElections %>%
+  filter(year == 2008) %>%
+  filter(demVote == max(demVote)) %>%
+  select(state)
+  print(most_demvote_state_2008)
+  
 # if a data frame has row names (presidentialElections doesn't have row names), you can use bleow line to add rownames as new column 
 # df <- mutate(df, row_names = rownames(df))
 
