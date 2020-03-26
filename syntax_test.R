@@ -469,11 +469,21 @@ View(Donations)
 Donors <- read.csv("Donors.csv", stringsAsFactors = FALSE) # use stringsAsFactors to make sure strig data is a vector rather than a factor
 View(Donors)
 
+# donations data frame is base, donors is added
 combined_data1 <- left_join(Donations, Donors, by = "donor_name")
 View(combined_data1)
 
+# donors data frame is base, donations is added
 combined_data2 <- right_join(Donations, Donors, by = "donor_name")
 View(combined_data2)
 
+# only common data between 2 data frames are created
 combined_data3 <- inner_join(Donations, Donors, by = "donor_name")
 View(combined_data3)
+
+# all of data in 2 data frames are joined together
+combined_data4 <- full_join(Donations, Donors, by = "donor_name")
+View(combined_data4)
+
+
+
