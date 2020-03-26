@@ -475,3 +475,5 @@ View(combined_data1)
 combined_data2 <- right_join(Donations, Donors, by = "donor_name")
 View(combined_data2)
 
+combined_data3 <- inner_join(Donations, Donors, by = "donor_name")
+View(combined_data3)
