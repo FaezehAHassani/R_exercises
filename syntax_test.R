@@ -466,3 +466,12 @@ state_vote_summary <- presidentialElections %>%
 Donations <- read.csv("Donations.csv", stringsAsFactors = FALSE) # use stringsAsFactors to make sure strig data is a vector rather than a factor
 View(Donations)
 
+Donors <- read.csv("Donors.csv", stringsAsFactors = FALSE) # use stringsAsFactors to make sure strig data is a vector rather than a factor
+View(Donors)
+
+combined_data1 <- left_join(Donations, Donors, by = "donor_name")
+View(combined_data1)
+
+combined_data2 <- right_join(Donations, Donors, by = "donor_name")
+View(combined_data2)
+
