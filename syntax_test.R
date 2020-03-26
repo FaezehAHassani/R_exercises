@@ -462,4 +462,7 @@ state_vote_summary <- presidentialElections %>%
     mean_other_parties_votedf = as.data.frame(mean_other_parties_vote) # return as data frame
   )
 
+# joining data frames together, remmber that for each added csv file after saving go: Session/Set Working Directory/To Source File Location
+Donations <- read.csv("Donations.csv", stringsAsFactors = FALSE) # use stringsAsFactors to make sure strig data is a vector rather than a factor
+View(Donations)
 
