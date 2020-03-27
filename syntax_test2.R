@@ -152,8 +152,17 @@ most_early <- flights %>%
   group_by(dest) %>%
   summarise(delay = mean(arr_delay, na.rm = TRUE))
 View(most_early)
-  
-  
+
+View(airports)
+
+most_early <- flights %>%
+  group_by(dest) %>%
+  summarise(delay = mean(arr_delay, na.rm = TRUE)) %>%
+  filter(delay == min(delay, na.rm = TRUE)) %>%
+  select(dest, delay) %>%
+  left_join(airports, by = c("dest" = "faa")) %>% # the column name in "airports" and "flights" data frames are different for names of destinations
+  select(dest, name, delay)
+print(most_early)
   
 
 
