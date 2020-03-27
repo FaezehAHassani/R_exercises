@@ -493,3 +493,6 @@ library("nycflights13")
 dim(flights) # dimensions of the "flights" data set
 colnames(flights) # column names
 View(flights)
+View(airlines) #another data frame containing the full name for the airlines
+
+
