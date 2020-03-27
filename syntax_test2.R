@@ -134,7 +134,19 @@ has_most_delays <- flights %>%
   summarise(num_delay = n()) %>%
   filter(num_delay == max(num_delay)) %>%
   select(carrier)
+print(has_most_delays) # returns UA
 
+# find the full name for the abbriviated UA name returned above
+most_delayed_name <- has_most_delays %>%
+  left_join(airlines, by = "carrier") %>%
+  select(name)
+print(most_delayed_name$name)
+  
+  
+  
+  
+  
+)
   
 
 
