@@ -190,7 +190,7 @@ ggplot(data = delay_by_month) +
   geom_vline(xintercept = 0, size = 0.5) + # position of middle y-xis line and its thickness
   xlim(c(-22, 22)) + # range of x axis
   scale_y_discrete(limits = rev(month.name)) + # removing this line will randomly put month names in y-axis, while adding rev will sort month name from jan to dec
-  labs(title = "Average Delay by Month", y = "", x = "Delay (minutes)")
+  labs(title = "Average Delay by Month", y = "Month", x = "Delay (minutes)")
 
 ? rev
 ? title
