@@ -8,7 +8,7 @@ library("dplyr")
 install.packages("tidyverse") # this package includes ggplot2 for visualisation
 library("tidyverse")
 
-# instal one real data frame example
+# # instal one real data frame example # #
 install.packages("pscl")
 library("pscl")
 View(presidentialElections)
@@ -118,7 +118,7 @@ View(combined_data3)
 combined_data4 <- full_join(Donations, Donors, by = "donor_name")
 View(combined_data4)
 
-# load flight data
+# # instal second real data frame example ##
 install.packages("nycflights13")
 library("nycflights13")
 
@@ -140,13 +140,20 @@ print(has_most_delays) # returns UA
 most_delayed_name <- has_most_delays %>%
   left_join(airlines, by = "carrier") %>%
   select(name)
-print(most_delayed_name$name)
+print(most_delayed_name$name) # returns "United Air Lines Inc."
+
+most_early <- flights %>%
+  group_by(dest) %>%
+  summarise(delay = mean(arr_delay))
+View(most_early) # few rows of NA rturned, to remove NA use  summarise(delay = mean(arr_delay, na.rm = TRUE))
+  
+# repeat above with removed NA 
+most_early <- flights %>%
+  group_by(dest) %>%
+  summarise(delay = mean(arr_delay, na.rm = TRUE))
+View(most_early)
   
   
-  
-  
-  
-)
   
 
 
