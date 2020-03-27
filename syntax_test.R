@@ -490,6 +490,6 @@ install.packages("nycflights13")
 library("nycflights13")
 
 ??flights # get help on the data frame information
-dim(flights)
-colnames(flights)
+dim(flights) # dimensions of the "flights" data set
+colnames(flights) # column names
 View(flights)
