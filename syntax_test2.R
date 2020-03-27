@@ -179,10 +179,20 @@ delay_by_month <- flights %>%
 
 month.name #defines months names in R
 
+# plotting with ggplot2
+ggplot(data = delay_by_month) +
+  geom_point(
+    mapping = aes(x = delay, y = month), # define columns related to x and y
+    color = "red", # color of dots
+    alpha = 0.5, # transparency of each dot
+    size = 5, # diameter of each dot
+  ) +
+  geom_vline(xintercept = 0, size = 0.5) + # position of middle y-xis line and its thickness
+  xlim(c(-22, 22)) + # range of x axis
+  scale_y_discrete(limits = rev(month.name)) + # removing this line will randomly put month names in y-axis, while adding rev will sort month name from jan to dec
+  labs(title = "Average Delay by Month", y = "", x = "Delay (minutes)")
 
-
-
-
+? rev
 
 
 
