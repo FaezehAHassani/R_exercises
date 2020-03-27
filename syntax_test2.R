@@ -176,7 +176,7 @@ most_early <- flights %>%
   summarise(delay = mean(arr_delay, na.rm = TRUE)) %>%
   filter(delay == max(delay, na.rm = TRUE)) %>%
   select(delay) %>%
-  mutate(month = month.name) 
+  mutate(month = month.name) # to print July as the month 7 mentioned above
 
 
 
