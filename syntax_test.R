@@ -495,4 +495,18 @@ colnames(flights) # column names
 View(flights)
 View(airlines) #another data frame containing the full name for the airlines
 
+has_most_delays <- flights %>%
+  group_by(carrier) %>%
+  filter(dep_delay > 0) %>%
+  summarise(num_delay = n()) %>%
+  filter(num_delay = max(num_delay)) %>%
+  select(carrier)
+
+
+
+
+
+
+
+
 
