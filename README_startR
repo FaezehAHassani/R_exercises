@@ -26,3 +26,6 @@
 ## _Fun facts:_
 - shift + 4 is dollar sign
 - double [[]] returns a vector of a list whereas [] returns a list => so better to use [[]] or $ to access the elements of a list
+
+## _Note_
+Sometimes after installing a new package, you get an error for any command in that package, it's better that you "Quit" Rstudio, re-open it and run the installation command again.
