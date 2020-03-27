@@ -183,7 +183,7 @@ month.name #defines months names in R
 ggplot(data = delay_by_month) +
   geom_point(
     mapping = aes(x = delay, y = month), # define columns related to x and y
-    color = "red", # color of dots
+    color = "black", # color of dots
     alpha = 0.5, # transparency of each dot
     size = 5, # diameter of each dot
   ) +
@@ -193,6 +193,7 @@ ggplot(data = delay_by_month) +
   labs(title = "Average Delay by Month", y = "", x = "Delay (minutes)")
 
 ? rev
+? title
 
 
 
