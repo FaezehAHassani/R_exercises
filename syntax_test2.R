@@ -164,20 +164,20 @@ most_early <- flights %>%
   select(dest, name, delay)
 print(most_early)
 
-most_early <- flights %>%
+flights %>%
   group_by(month) %>%
   summarise(delay = mean(arr_delay, na.rm = TRUE)) %>%
   filter(delay == max(delay, na.rm = TRUE)) %>%
   select(month) %>%
   print() #print the tibble directly, return: # A tibble: 1 x 1 month <int> 1     7
 
-most_early <- flights %>%
+delay_by_month <- flights %>%
   group_by(month) %>%
   summarise(delay = mean(arr_delay, na.rm = TRUE)) %>%
-  filter(delay == max(delay, na.rm = TRUE)) %>%
   select(delay) %>%
-  mutate(month = month.name) # to print July as the month 7 mentioned above
+  mutate(month = month.name)
 
+month.name #defines months names in R
 
 
 
