@@ -163,7 +163,22 @@ most_early <- flights %>%
   left_join(airports, by = c("dest" = "faa")) %>% # the column name in "airports" and "flights" data frames are different for names of destinations
   select(dest, name, delay)
 print(most_early)
-  
+
+most_early <- flights %>%
+  group_by(month) %>%
+  summarise(delay = mean(arr_delay, na.rm = TRUE)) %>%
+  filter(delay == max(delay, na.rm = TRUE)) %>%
+  select(month) %>%
+  print() #print the tibble directly, return: # A tibble: 1 x 1 month <int> 1     7
+
+most_early <- flights %>%
+  group_by(month) %>%
+  summarise(delay = mean(arr_delay, na.rm = TRUE)) %>%
+  filter(delay == max(delay, na.rm = TRUE)) %>%
+  select(delay) %>%
+  mutate(month = month.name) 
+
+
 
 
 
