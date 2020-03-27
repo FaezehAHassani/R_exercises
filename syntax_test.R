@@ -485,5 +485,11 @@ View(combined_data3)
 combined_data4 <- full_join(Donations, Donors, by = "donor_name")
 View(combined_data4)
 
+# load flight data
+install.packages("nycflights13")
+library("nycflights13")
 
-
+??flights # get help on the data frame information
+dim(flights)
+colnames(flights)
+View(flights)
