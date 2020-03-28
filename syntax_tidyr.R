@@ -13,3 +13,5 @@ band_data_long <- gather( # gather cells from band_data_wide data frame
   -city # column that data from band_wide_wide are sorted based on, similar to select() in deplyr package
 )
 View(band_data_long)
+
+filter(band_data_long, band == "greensky_bluegrass") # to filter cells on greansky_bluegrass from the band_data_long data frame
