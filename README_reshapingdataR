@@ -1,0 +1,3 @@
+# Use `tidyr` to tiday your Data
+- you can sort your data based on rows (observations) and columns (features/variables) of interest
+- data can be sorted in wide or long format
