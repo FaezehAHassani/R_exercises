@@ -29,4 +29,10 @@ View(band_data_long_v2)
 
 ? unite # help on command "unite"
 
+band_data_long_v3 <- separate(band_data_long, band, "band_short", sep = "_", remove = TRUE, convert = FALSE) # return shortened band names
+View(band_data_long_v3)         
+
+? separate
+  
+
 
