@@ -7,4 +7,4 @@
 
 # Working with comma-separated value (CSV)
 - Construct your own data frames by entering rows and columns separated by comma and store them in "file_name".csv
-- Always include stringsAsFactors = FALSE when creating or loading a data set
+- Always include stringsAsFactors = FALSE when creating or loading a data set in Rstudio console, remember to do Session/Set Working Directory/To Source File Location 

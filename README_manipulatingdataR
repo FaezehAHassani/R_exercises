@@ -20,5 +20,5 @@
 
 # Note:
 - If by mistake you re-wrote a downloaded data frame, re-start Rstudio and install the data frame package again
-- ehen install a package, it may load other packages as dependencies, for instance "pipe" is loaded when you install dplyr
+- when install a package, it may load other packages as dependencies, for instance "pipe" is loaded when you install dplyr
 - `cmd+shift+m` help you to type %>% in R
