@@ -52,6 +52,18 @@ expenditure_plot_data <- wb_data %>%
   rename(X2017 = X2017..YR2017.) %>%
   rename(X2018 = X2018..YR2018.) %>%
   filter(indicator == indicator_of_interest)
-  
 View(expenditure_plot_data)
 
+expenditure_chart <- ggplot(data = expenditure_plot_data) +
+ geom_text( # add text on data points
+   mapping = aes(x = X2010 / 100, y = X2018 / 100, label = CountryCode) 
+ )
+ scale_x_continuous(labels = percent) + # for continuoes values
+ scale_y_continuous(labels = percent) +
+ labs(title = indicator, x = "Expenditure 2010", y = "Expenditure 2018") 
+ 
+? aes #aesthetic mapping
+? geom_tex
+? labels
+
+ 
