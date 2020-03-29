@@ -36,10 +36,22 @@ View(band_data_long_v3)
   
 wb_data <- read.csv(
   "world_bank_data.csv",
-  stringsAsFactors = F,
-  skip = 5 # to skip the first 5 rows of data
+  stringsAsFactors = F
+  # skip = 3 to skip the first 5 rows of data
   )
 View(wb_data)
 
-
+indicator_of_interest <- "Government expenditure on education, US$ (millions)"
+expenditure_plot_data <- wb_data %>%
+  rename(indicator = Series) %>%
+  rename(X2010 = X2010..YR2010.) %>%
+  rename(X2013 = X2013..YR2013.) %>%
+  rename(X2014 = X2014..YR2014.) %>%
+  rename(X2015 = X2015..YR2015.) %>%
+  rename(X2016 = X2016..YR2016.) %>%
+  rename(X2017 = X2017..YR2017.) %>%
+  rename(X2018 = X2018..YR2018.) %>%
+  filter(indicator == indicator_of_interest)
+  
+View(expenditure_plot_data)
 
