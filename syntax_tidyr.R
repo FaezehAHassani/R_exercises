@@ -34,5 +34,9 @@ View(band_data_long_v3)
 
 ? separate
   
-
+wb_data <- read.csv(
+  "data/world_bank_data.csv",
+  stringsAsFactors = F,
+  skip = 4 # skip the first 4 rows of data
+)
 
