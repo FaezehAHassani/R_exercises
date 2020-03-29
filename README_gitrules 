@@ -36,4 +36,8 @@ Commit => git commit -m "Your message => refer to above NOTE 1"
 
 Push => git push => enter user and pass => refresh GitHub account to see changes
 
-
+- `control + L`: clear terminal package
+- `git branch`: shows my working branch highlighted in green as well as other local branches
+- `git log`: shows messages of my previous commits
+- `git log`: shows above in a better look
+- `git commit -m "message": put a message on my committed file
