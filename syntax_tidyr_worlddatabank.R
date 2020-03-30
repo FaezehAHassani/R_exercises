@@ -59,7 +59,8 @@ expenditure_chart <- ggplot(data = expenditure_plot_data) +
  scale_y_continuous(labels = percent) +
  labs(title = indicator_of_interest, x = "Expenditure 2010", y = "Expenditure 2018")
 
-print(expenditure_plot_data)
+options(max.print = 99999) # when the number of points are alot it the show() command return the error of reaching mx.print, this command increase the maximum number
+show(expenditure_plot_data)
 
 # is.data.frame(expenditure_plot_data) return TRUE
 # ? aes #aesthetic mapping
