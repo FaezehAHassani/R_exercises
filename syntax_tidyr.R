@@ -52,19 +52,24 @@ wb_data <- read.csv(
   )
 View(wb_data)
 
-
+install.packages("naniar")
+library("naniar")
 
 indicator_of_interest <- "Government expenditure on education, US$ (millions)"
 expenditure_plot_data <- wb_data %>%
-rename(indicator = Series) %>%
-rename(X2010 = X2010..YR2010.) %>%
-rename(X2013 = X2013..YR2013.) %>%
-rename(X2014 = X2014..YR2014.) %>%
-rename(X2015 = X2015..YR2015.) %>%
-rename(X2016 = X2016..YR2016.) %>%
-rename(X2017 = X2017..YR2017.) %>%
-rename(X2018 = X2018..YR2018.) %>%
-filter(indicator == indicator_of_interest)
+ rename(indicator = Series) %>%
+ rename(X2010 = X2010..YR2010.) %>%
+ rename(X2013 = X2013..YR2013.) %>%
+ rename(X2014 = X2014..YR2014.) %>%
+ rename(X2015 = X2015..YR2015.) %>%
+ rename(X2016 = X2016..YR2016.) %>%
+ rename(X2017 = X2017..YR2017.) %>%
+ rename(X2018 = X2018..YR2018.) %>%
+ filter(indicator == indicator_of_interest)
+
+# to replce ".." valuses in the data frame to NA
+expenditure_plot_data <- expenditure_plot_data %>%  
+ replace_with_na(replace = list(X2010 = c("..")))
 
 View(expenditure_plot_data)
 
@@ -73,14 +78,13 @@ View(expenditure_plot_data)
 library('scales') # adding this library removed the error: Error in check_breaks_labels(breaks, labels) : object 'percent' not found
 
 expenditure_chart <- ggplot(data = expenditure_plot_data) +
+ geom_point() + # add dots for data points
  geom_text_repel( # add text on data points
-  mapping = aes(x = X2010, y = X2018, label = Country.Code)
- ) +
- scale_x_continuous(labels = percent) + # for continuoes values
- scale_y_continuous(labels = percent) +
- labs(title = indicator_of_interest, x = "Expenditure 2010", y = "Expenditure 2018") 
+  mapping = aes(x = X2010 / 100, y = X2018 / 100, label = Country.Code)) +
+ scale_x_continuous(labels = percent) + scale_y_continuous(labels = percent) +
+ labs(title = indicator_of_interest, x = "Expenditure 2010", y = "Expenditure 2018")
 
-print(expenditure_chart) 
+
 
 # ? aes #aesthetic mapping
 # ? geom_tex
