@@ -16,7 +16,7 @@ library("naniar")
 
 library('scales') # adding this library removed the error: Error in check_breaks_labels(breaks, labels) : object 'percent' not found
 
-############## load new csv file ############################
+############## load new csv file: World Data Bank ############################
   
 wb_data <- read.csv(
   "world_bank_data.csv",
@@ -87,6 +87,15 @@ ggplot(data = expenditure_plot_data_noNA) +
   scale_y_continuous() +
   labs(title = indicator_of_interest, y = "Expenditure 2018", x = "Expenditure 2010")
 
+# sort expenditure_plot_data_noNA based on year
+long_year_data <- expenditure_plot_data_noNA %>%
+  gather(
+    key = year, # year is the new column
+    value = value, # value is the new column
+    X2010:X2018 # all columns between X2010 and X will be gathered
+  )
+View(long_year_data)
+####### commands to get help
 # is.data.frame(expenditure_plot_data) return TRUE
 # ? aes #aesthetic mapping
 # ? geom_tex
