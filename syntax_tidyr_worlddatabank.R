@@ -95,6 +95,15 @@ long_year_data <- expenditure_plot_data_noNA %>%
     X2010:X2018 # all columns between X2010 and X will be gathered
   )
 View(long_year_data)
+
+# make data set for a country of interest
+senegal_plot_data <- long_year_data %>%
+  filter(
+    indicator_of_interest == indicator,
+    Country.Code == "SEN" # Senegal
+  ) %>%
+  mutate(year = as.numeric(substr(x = year, 2, 5))) # remove X from X2010-2018 columns name: substr(x = "column name of choice, starting number of character in the column name, stopping character number in the column name)
+
 ####### commands to get help
 # is.data.frame(expenditure_plot_data) return TRUE
 # ? aes #aesthetic mapping
