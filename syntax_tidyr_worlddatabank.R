@@ -112,7 +112,40 @@ ggplot(data = senegal_plot_data) + # when I assign ggplot to a name: senegal_plo
   # scale_y_continuous(labels = percent) +
   labs(title = chart_title, x = "Year", y = "Percent of education expenditure")
 
-indicator
+# use original wb_data to make new set
+wide_data <- wb_data %>%
+  select(-Series.Code) %>%
+  rename(indicator = Series) %>%
+  rename(X2010 = X2010..YR2010.) %>%
+  rename(X2013 = X2013..YR2013.) %>%
+  rename(X2014 = X2014..YR2014.) %>%
+  rename(X2015 = X2015..YR2015.) %>%
+  rename(X2016 = X2016..YR2016.) %>%
+  rename(X2017 = X2017..YR2017.) %>%
+  rename(X2018 = X2018..YR2018.) %>%
+  replace_with_na(replace = list(X2010 = c(".."))) %>%
+  replace_with_na(replace = list(X2013 = c(".."))) %>%
+  replace_with_na(replace = list(X2014 = c(".."))) %>%
+  replace_with_na(replace = list(X2015 = c(".."))) %>%
+  replace_with_na(replace = list(X2016 = c(".."))) %>%
+  replace_with_na(replace = list(X2017 = c(".."))) %>%
+  replace_with_na(replace = list(X2018 = c(".."))) %>%
+  drop_na(X2010) %>%
+  drop_na(X2013) %>% 
+  drop_na(X2014) %>% 
+  drop_na(X2015) %>% 
+  drop_na(X2016) %>% 
+  drop_na(X2017) %>% 
+  drop_na(X2018) 
+View(wide_data)
+
+wb_data$X2010 <- as.numeric(wb_data$X2010)
+wb_data$X2013 <- as.numeric(wb_data$X2013)
+wb_data$X2014 <- as.numeric(wb_data$X2014)
+wb_data$X2015 <- as.numeric(wb_data$X2015)
+wb_data$X2016 <- as.numeric(wb_data$X2016)
+wb_data$X2017 <- as.numeric(wb_data$X2017)
+wb_data$X2018 <- as.numeric(wb_data$X2018)
 ####### commands to get help
 # is.data.frame(expenditure_plot_data) return TRUE
 # ? aes #aesthetic mapping
