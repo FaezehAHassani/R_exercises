@@ -149,7 +149,39 @@ wide_data <- wb_data %>%
   ) 
 View(wide_data)
 
+wide_data$`Unemployment, female (% of female labor force)`
 
+
+
+# plot unemployment verus literacy rate for female from wide_data data frame
+wide_data$"Adult literacy rate, population 15+ years, female (%)" <- as.numeric( wide_data$"Adult literacy rate, population 15+ years, female (%)") 
+wide_data$"Unemployment, female (% of female labor force)" <- as.numeric( wide_data$"Unemployment, female (% of female labor force)") 
+x_var <- "Adult literacy rate, population 15+ years, female (%)"
+y_var <- "Unemployment, female (% of female labor force)"
+options(max.print = 99999)
+
+lit_plot_data <- wide_data %>%
+ mutate(
+   lit_percent_2014 = wide_data[, x_var] / 100,
+   employ_percent_2014 = wide_data[, y_var] /100
+ ) %>%
+   filter(year == "X2014")
+ 
+ 
+
+
+drop_na(x_var) %>%
+  x_var = as.numeric(x_var)
+  
+                                    mutate(
+    lit_percent_2014 = wide_data[, x_var] / 100,
+    employ_percent_2014 = wide_data[, y_var] /100
+    ) %>%
+  filter(year == "X2014")
+
+  
+  wide_data %>%
+    list(x_var)
 ####### commands to get help
 # is.data.frame(expenditure_plot_data) return TRUE
 # ? aes #aesthetic mapping
@@ -158,6 +190,7 @@ View(wide_data)
 #? scale_x_continuous
 # ? ggproto
 #? geom_text_repel
-? spread
+#? spread
+  ? as.numeric
 
  
