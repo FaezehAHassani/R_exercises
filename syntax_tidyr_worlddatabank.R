@@ -103,7 +103,16 @@ senegal_plot_data <- long_year_data %>%
     Country.Code == "SEN" # Senegal
   ) %>%
   mutate(year = as.numeric(substr(x = year, 2, 5))) # remove X from X2010-2018 columns name: substr(x = "column name of choice, starting number of character in the column name, stopping character number in the column name)
+View(senegal_plot_data)
 
+# plot senegal_plot_data
+chart_title <- paste(indicator_of_interest, "in Senegal")
+ggplot(data = senegal_plot_data) + # when I assign ggplot to a name: senegal_plot <- ggplot, for some reason the plot is not shown automatically!
+  geom_line(mapping = aes(x = year, y = value / 100)) +
+  # scale_y_continuous(labels = percent) +
+  labs(title = chart_title, x = "Year", y = "Percent of education expenditure")
+
+indicator
 ####### commands to get help
 # is.data.frame(expenditure_plot_data) return TRUE
 # ? aes #aesthetic mapping
