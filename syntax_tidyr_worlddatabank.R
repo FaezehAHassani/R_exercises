@@ -141,19 +141,14 @@ wide_data <- wb_data %>%
     X2010:X2018
   ) %>%
   select(-Series.Code) %>%
+  replace_with_na(replace = list(Series = "")) %>% # a few cells in Series coumn were empty, first I assigned NA to thos cells, then in the next command I excluded those rows containing NA
+  drop_na(Series) %>%
   spread(
     key = Series,
     value = value
   ) 
 View(wide_data)
 
-wide_data_indicator_name <- wide_data %>%
-  select() %>%
-  spread(
-    key = Series,
-    value = value
-  ) 
-View(wide_data_indicator_name)
 
 ####### commands to get help
 # is.data.frame(expenditure_plot_data) return TRUE
@@ -163,6 +158,6 @@ View(wide_data_indicator_name)
 #? scale_x_continuous
 # ? ggproto
 #? geom_text_repel
-
+? spread
 
  
