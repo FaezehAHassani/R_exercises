@@ -1,0 +1,12 @@
+# Accessing database
+- it is cumbersome to download various cvs file from an online source. That source may have a database that contains tables.
+- commonly used database is a relational database_.
+- each table may contain only one feature but it has a special id/ primary key.
+- you can use these ids to join the table.
+- managing these databases requires installing other programs known as relational database management system (RDMS)
+
+**Note: you do not require RDMS in _R_**
+- a few examples of RDMS are:
+ - SQLite
+ - PostgreSQL
+ - MySQL
