@@ -151,8 +151,6 @@ View(wide_data)
 
 wide_data$`Unemployment, female (% of female labor force)`
 
-
-
 # plot unemployment verus literacy rate for female from wide_data data frame
 wide_data$"Adult literacy rate, population 15+ years, female (%)" <- as.numeric( wide_data$"Adult literacy rate, population 15+ years, female (%)") 
 wide_data$"Unemployment, female (% of female labor force)" <- as.numeric( wide_data$"Unemployment, female (% of female labor force)") 
@@ -176,7 +174,6 @@ ggplot(data = lit_plot_data) +
     y = y_var,
     title = "Female literacy versus female unemployment"
   )
-
 
 ####### commands to get help
 # is.data.frame(expenditure_plot_data) return TRUE
