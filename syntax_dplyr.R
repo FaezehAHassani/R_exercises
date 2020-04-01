@@ -13,6 +13,12 @@ install.packages("pscl")
 library("pscl")
 View(presidentialElections)
 
+# # instal second real data frame example ##
+install.packages("nycflights13")
+library("nycflights13")
+
+######################################################
+
 votes <- select(presidentialElections, year, demVote) # equivalent to below Rsyntax, remember column nale is not character string, it's varaiable!
 votes <- presidentialElections[, c("year", "demVote")]
 View(votes)
@@ -45,8 +51,7 @@ presidentialElections <- arrange(
 )
 View(presidentialElections)
 
-
-K# to summarise a column by using mean, median, or max
+# to summarise a column by using mean, median, or max
 average_vote <- summarise(
   presidentialElections,
   mean_demVote = mean(demVote), # equivalent to - year, arrange "year" column in decreasing order
@@ -118,11 +123,7 @@ View(combined_data3)
 combined_data4 <- full_join(Donations, Donors, by = "donor_name")
 View(combined_data4)
 
-# # instal second real data frame example ##
-install.packages("nycflights13")
-library("nycflights13")
-
-??flights # get help on the data frame information
+###### load real flights data frame ############
 dim(flights) # dimensions of the "flights" data set
 colnames(flights) # column names
 View(flights)
@@ -192,6 +193,8 @@ ggplot(data = delay_by_month) +
   scale_y_discrete(limits = rev(month.name)) + # removing this line will randomly put month names in y-axis, while adding rev will sort month name from jan to dec
   labs(title = "Average Delay by Month", y = "Month", x = "Delay (minutes)")
 
+####### command for help ###########
+??flights # get help on the data frame information
 ? rev
 ? title
 
