@@ -1,7 +1,22 @@
 ##### BASIC R SYNTAX ######
 ##################################################
 
-# Calculate the number of minutes in a year
+######### PACKAGES FOR A BETTER STYLE CODES ##########
+#########################################################
+
+install.packages("stringr") 
+library("stringr")
+str_count("ikjgdjhi", "i")
+
+install.packages("lintr")
+library("lintr")
+lint("/Users/faezeh/Desktop/project/syntax_test.R")
+
+install.packages("styler")
+library("styler")
+lint("/Users/faezeh/Desktop/project/syntax_test.R")
+
+############## Calculate the number of minutes in a year
 minutes_in_a_year <- 365 * 24 * 60
 print(minutes_in_a_year)
 
@@ -18,8 +33,6 @@ print(my_integer)
 
 my_complex_number <- 2i - 9
 print(my_complex_number)
-
-#?sum  or ??sum to get help on a syntax
 
 example(print)
 
@@ -49,21 +62,6 @@ seq(-1, 2)
 paste("hi", "mom", sep = "   ")
 
 "+" (2, 3) #means 2+3
-
-######### PACKAGES FOR A BETTER STYLE CODES ##########
-#########################################################
-
-install.packages("stringr") 
-library("stringr")
-str_count("ikjgdjhi", "i")
-
-install.packages("lintr")
-library("lintr")
-lint("/Users/faezeh/Desktop/project/syntax_test.R")
-
-install.packages("styler")
-library("styler")
-lint("/Users/faezeh/Desktop/project/syntax_test.R")
 
 ######## FUNCTION & IF/ELSE LOOP #################
 ####################################
@@ -136,7 +134,6 @@ print(all_but_adam) # returns "ana"   "ellen"
 print(people[2:3])
 indices <- c(1,3)
 print(people[indices]) # returns "ana"  "adam"
-
 
 v1 <- c(1, 2, 3, 4)
 v2 <- c(-1, 0, 8, -100)
@@ -365,3 +362,5 @@ bag_factor_type <- split(bag_factor, bag_factor$bag)
 View(bag_factor_type)
 tapply(bag_factor$cost, bag_factor$bag, mean) # first is the variable that mean is applying to
 
+##### commands for help #######
+#?sum  or ??sum to get help on a syntax
