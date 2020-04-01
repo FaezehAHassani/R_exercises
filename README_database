@@ -4,9 +4,22 @@
 - each table may contain only one feature but it has a special id/ primary key.
 - you can use these ids to join the table.
 - managing these databases requires installing other programs known as relational database management system (RDMS)
-
-**Note: you do not require RDMS in _R_**
 - a few examples of RDMS are:
  - SQLite
  - PostgreSQL
  - MySQL
+
+**Note:**
+
+- **you do not require RDMS in _R_**
+- **SQL stands for _Structured Query Language_**
+
+# SQL statements versus dplyr commands
+| SQL                                                                                | dplyr                                          |
+| :----------------------------------------------------------------------------------| :----------------------------------------------|
+| SELECT column FROM table                                                           | select(column, table)                          |
+| SELECT column1, column 2 FROM table (i.e. access two columns 1&2)                  |                                                |
+| SELECT * FROM table (i.e. access all columns)                                      |                                                |
+| SELECT id AS song_id FROM songs (i.e. access "id" column and rename to "song_id")  | mutate()                                       |
+| SELECT title FROM songs WHERE artist_id = 11                                       |filter(songs, artist_ide == 11 %>% select(title)|
+|                                                                                    |                  |
