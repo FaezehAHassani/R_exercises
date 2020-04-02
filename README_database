@@ -35,12 +35,12 @@ table: songs
 | 83                | Starman                | 10          |
 
 # SQL statements versus dplyr commands
-| SQL                                                                                                                | dplyr                                               |
-| :------------------------------------------------------------------------------------------------------------------| :---------------------------------------------------|
-| SELECT column FROM table                                                                                           | select(column, table)                               |
-| SELECT column1, column 2 FROM table (i.e. access two columns 1&2)                                                  |                                                     |
-| SELECT * FROM table (i.e. access all columns)                                                                      |                                                     |
-| SELECT id AS song_id FROM songs (i.e. access "id" column and rename to "song_id")                                  | mutate()                                            |
-| SELECT title FROM songs WHERE artist_id = 11                                                                       |filter(songs, artist_ide == 11 %>% <br> select(title)|
-| SELECT title FROM songs WHERE artist_id = 11 OR title = 'Starman'                                                  |                                                     |
-| SELECT artists.id, artist.name, songs.id, songs.title FROM artists <br> JOIN songs ON songs.artist_id = artists.id |                                                     |
+| SQL                                                                                                                                                                                                                    | dplyr                                               |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| :---------------------------------------------------|
+| SELECT column FROM table                                                                                                                                                                                               | select(column, table)                               |
+| SELECT column1, column 2 FROM table (i.e. access two columns 1&2)                                                                                                                                                      |                                                     |
+| SELECT * FROM table (i.e. access all columns)                                                                                                                                                                          |                                                     |
+| SELECT id AS song_id FROM songs (i.e. access "id" column and rename to "song_id")                                                                                                                                      | mutate()                                            |
+| SELECT title FROM songs WHERE artist_id = 11                                                                                                                                                                           |filter(songs, artist_ide == 11 %>% <br> select(title)|
+| SELECT title FROM songs WHERE artist_id = 11 OR title = 'Starman'                                                                                                                                                      |                                                     |
+| SELECT artists.id, artist.name, songs.id, songs.title FROM artists <br> JOIN songs ON songs.artist_id = artists.id<br>(i.e. "table name"."column name")<br>you can also use LEFT JOIN/RIGHT JOIN/INNER JOIN/OUTER JOIN |                                                     |
