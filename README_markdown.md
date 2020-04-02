@@ -5,6 +5,7 @@
 
 ## Table
 - Check how to make a **5x2** table below.
+- You can put multiple line in one table cell by using <br> between each line.
 - I provided some tips on _git_ in: [git_rules](https://github.com/FaezehAHassani/R-learning/blob/master/git_rules%20)
 
 | Items   | number |
