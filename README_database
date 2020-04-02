@@ -14,12 +14,33 @@
 - **you do not require RDMS in _R_**
 - **SQL stands for _Structured Query Language_**
 
+
+# a few table examples in a database
+
+table: artist
+
+| id                | name                   |
+| :-----------------| :----------------------|
+| 10                | David Bowie            |
+| 11                | Queen                  |
+| 12                | Prince                 |
+
+table: songs
+
+| id                | title                  | artist_id   |
+| :-----------------| :----------------------| :-----------|
+| 80                | Bohemian Rhapsody      | 11          |
+| 81                | Don't Stop Me Now      | 11          |
+| 82                | Purple Rain            | 12          |
+| 83                | Starman                | 10          |
+
 # SQL statements versus dplyr commands
-| SQL                                                                                | dplyr                                          |
-| :----------------------------------------------------------------------------------| :----------------------------------------------|
-| SELECT column FROM table                                                           | select(column, table)                          |
-| SELECT column1, column 2 FROM table (i.e. access two columns 1&2)                  |                                                |
-| SELECT * FROM table (i.e. access all columns)                                      |                                                |
-| SELECT id AS song_id FROM songs (i.e. access "id" column and rename to "song_id")  | mutate()                                       |
-| SELECT title FROM songs WHERE artist_id = 11                                       |filter(songs, artist_ide == 11 %>% select(title)|
-|                                                                                    |                  |
+| SQL                                                                                                                | dplyr                                               |
+| :------------------------------------------------------------------------------------------------------------------| :---------------------------------------------------|
+| SELECT column FROM table                                                                                           | select(column, table)                               |
+| SELECT column1, column 2 FROM table (i.e. access two columns 1&2)                                                  |                                                     |
+| SELECT * FROM table (i.e. access all columns)                                                                      |                                                     |
+| SELECT id AS song_id FROM songs (i.e. access "id" column and rename to "song_id")                                  | mutate()                                            |
+| SELECT title FROM songs WHERE artist_id = 11                                                                       |filter(songs, artist_ide == 11 %>% <br> select(title)|
+| SELECT title FROM songs WHERE artist_id = 11 OR title = 'Starman'                                                  |                                                     |
+| SELECT artists.id, artist.name, songs.id, songs.title FROM artists <br> JOIN songs ON songs.artist_id = artists.id |                                                     |
