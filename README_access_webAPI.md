@@ -18,7 +18,7 @@
  scheme.....domain.......port....path................query...........................fragment
 - domain/base URI and path/endpoint and query are the important sections of above URI format
 - The JSON format data returned from a web API might be messy but if you install JSONView you get a cleaner version of data
-- Example: `https://api.github.com/search/repositories?q=dplyr&sort=forks`
+- Example: `https://api.github.com/search/repositories?q=dplyr&sort=forks`, this will return data in JASON format. You can load this data to R by "httr" package
 - Many web services issue _access tokens_ also called **API keys** for users access
 
 # HTTP verbs
