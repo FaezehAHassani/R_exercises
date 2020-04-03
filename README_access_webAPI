@@ -1,4 +1,10 @@
 # Accessing web API
 
 - Accessing data form a remote server on web (via URL)
-- Web services allow computer program like R to access data by offering an application programming interface  (API)
+- Web services allow computer program like R to access data by offering an application programming interface (API)
+
+ - API is an interface that allows communication between two different systems
+ - For example, the functions in `dplyr` package make the API for this package
+
+- Many web services use a particular style for _where_ and _how_ their data be accessed, and that style is REpresentational State Transfer (REST)
+- The functions used by web services foe allowing data access to computers are in the form of HTTPS (**H**yper**T**ext **T**ransfer **P**rotocol) requests
