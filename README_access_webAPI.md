@@ -1,0 +1,29 @@
+# Accessing web API
+
+- Accessing data form a remote server on web (via URL)
+- Web services allow computer program like R to access data by offering an application programming interface (API)
+
+ - API is an interface that allows communication between two different systems
+ - For example, the functions in `dplyr` package make the API for this package
+
+- Many web services use a particular style for _where_ and _how_ their data be accessed, and that style is REpresentational State Transfer (REST)
+- The functions used by web services foe allowing data access to computers are in the form of HTTPS (**H**yper**T**ext **T**ransfer **P**rotocol) requests
+- The web service response to the computer is in HTML format
+- Companies like **Twitter, iTunes, and Reddit** make their data open to public through an API
+
+# REST
+- URI (Uniform Resource Identifier) is a generalised version of URL, commonly considered as **web address**
+
+`https://domain.com:999/example/page/type=husky&name=dub#nose`
+ scheme.....domain.......port....path................query...........................fragment
+- domain/base URI and path/endpoint and query are the important sections of above URI format
+- The JSON format data returned from a web API might be messy but if you install JSONView you get a cleaner version of data
+- Example: `https://api.github.com/search/repositories?q=dplyr&sort=forks`
+- Many web services issue _access tokens_ also called **API keys** for users access
+
+# HTTP verbs
+- GET: return a resource
+- POST: insert a record
+- PUT: update resource
+- DELETE: remove a resource
+- OPTIONS: return the methods that can be applied to the resource
