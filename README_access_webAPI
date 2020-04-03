@@ -8,3 +8,11 @@
 
 - Many web services use a particular style for _where_ and _how_ their data be accessed, and that style is REpresentational State Transfer (REST)
 - The functions used by web services foe allowing data access to computers are in the form of HTTPS (**H**yper**T**ext **T**ransfer **P**rotocol) requests
+- The web service response to the computer is in HTML format
+- Companies like **Twitter, iTunes, and Reddit** make their data open to public through an API
+
+# REST
+- URI (Uniform Resource Identifier) is a generalised version of URL, commonly considered as **web address**
+
+`https://domain.com:999/example/page/type=husky&name=dub#nose`
+ scheme.....domain.......port....path................query...........................fragment
