@@ -23,4 +23,15 @@ response_text <- content(response, type = "text") # open requested data without 
 print(response_text)
 
 response_data <- fromJSON(response_text)       # convert JSON string to list
-print(response_data)
+print(response_data) # difficult to read as you should scroll => View() is better
+View(response_data) # easier to read
+is.data.frame(response_data) # to see if fromJSON data is data frame that returns FALSE
+names(response_data) # return the keys of the list, returns: "total_count"        "incomplete_results" "items" therefore use the command below
+
+items <- response_data$items
+is.data.frame(items) # rturns TRUE, so this is the data that we can work with in R
+View(items)
+
+
+
+
