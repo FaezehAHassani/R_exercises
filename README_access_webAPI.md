@@ -33,6 +33,7 @@
 {
   "first_name": "Ada",
   "job": "Programmer",
+  "pets": ["Magnet", "Mocha", "Anni", "Fifi"] => comment: make a vector within a list
   "salary": 78000,
   "in_union": true,
   "favourites": {
@@ -44,7 +45,24 @@
 list(
   first_name = "Ada",
   job = "Programmer",
+  pets = c("Magnet", "Mocha", "Anni", "Fifi")
   salary = 78000,
   in_union = TRUE,
   favourites = list(music = "jazz", food = "pizza")
   )
+
+## Array in JSON
+["Aardvark", "Baboon", "Camel"]
+### Array of lists
+[
+ {"country": "Brazil", "titles": 5, "total_losses": 17}
+ {"country": "Netherland", "titles": 8, "total_losses": 10}
+]
+
+## Array in R
+list("Aardvark", "Baboon", "Camel")
+### Array of lists
+list(
+  list(country = "Brazil", titles = 5, total_losses = 17),
+  list(country = "Netherland", titles = 8, total_losses = 10)
+)
