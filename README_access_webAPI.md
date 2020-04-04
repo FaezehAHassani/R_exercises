@@ -29,6 +29,8 @@
 - OPTIONS: return the methods that can be applied to the resource
 
 # JSON versus R syntax
+JSON presents list of rows while data frame presents list of columns
+
 ## JSON
 {
   "first_name": "Ada",
