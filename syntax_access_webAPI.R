@@ -1,8 +1,11 @@
 ######## ACCESS WEB API ###########
 
 ##### Install packages ###########
-install.packages("httr")
+install.packages("httr") # load data from your browser to R
 library("httr")
+
+install.packages("jsonlite") # convert JSON data to R data
+library("jsonlite")
 
 ######## Get data from web API ############
 
@@ -18,3 +21,6 @@ response <- GET(resource_url, query = query_params)
 print(response) # return Date, Status, Content-Type, and Size that is called "response header"
 response_text <- content(response, type = "text") # open requested data without allowing hhtps to midify it
 print(response_text)
+
+response_data <- fromJSON(response_text)       # convert JSON string to list
+print(response_data)
