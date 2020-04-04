@@ -17,7 +17,7 @@
 `https://domain.com:999/example/page/type=husky&name=dub#nose`
  scheme.....domain.......port....path................query...........................fragment
 - domain/base URI and path/endpoint and query are the important sections of above URI format
-- The JSON format data returned from a web API might be messy but if you install JSONView you get a cleaner version of data
+- The JSON (JavaScript Object Notation) format data returned from a web API might be messy but if you install JSONView you get a cleaner version of data
 - Example: `https://api.github.com/search/repositories?q=dplyr&sort=forks`, this will return data in JASON format. You can load this data to R by "httr" package
 - Many web services issue _access tokens_ also called **API keys** for users access
 
@@ -27,3 +27,24 @@
 - PUT: update resource
 - DELETE: remove a resource
 - OPTIONS: return the methods that can be applied to the resource
+
+# JSON versus R syntax
+## JSON
+{
+  "first_name": "Ada",
+  "job": "Programmer",
+  "salary": 78000,
+  "in_union": true,
+  "favourites": {
+    "music": "jazz",
+    "food": "pizza",
+  }
+}
+## R
+list(
+  first_name = "Ada",
+  job = "Programmer",
+  salary = 78000,
+  in_union = TRUE,
+  favourites = list(music = "jazz", food = "pizza")
+  )
