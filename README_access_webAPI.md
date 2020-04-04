@@ -68,3 +68,11 @@ list(
   list(country = "Brazil", titles = 5, total_losses = 17),
   list(country = "Netherland", titles = 8, total_losses = 10)
 )
+
+# SUMMARY OF STEPS WHEN ACCESS DATA FROM WEBAPI
+- 1. GET()
+- 2. content()
+- 3. JSON ()
+- 4. Explore returned data to find the data in list format and readable in R
+- 5. flatten ()
+- 6. Now analyse your data with `dplyr` in R
