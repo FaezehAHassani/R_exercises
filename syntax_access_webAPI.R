@@ -32,6 +32,20 @@ items <- response_data$items
 is.data.frame(items) # rturns TRUE, so this is the data that we can work with in R
 View(items)
 
+# make a data farme as a column within a dataframe (BAD IDEA) then flatten it as a single data frame
+people <- data.frame(names = c("Ed", "Jessica", "Kegan"))
+favourites <- data.frame(
+  food = c("Pizza", "Pasta", "Salad"),
+  music = c("Bluegrass", "Indie", "Electronic" )
+)
+people$favourites <- favourites
+print(people) # return 3 columns: names, favourites.food, favourites.music
+people$favourites.food # but actually the column favourites.food does not exists and returns NULL
+people$favourites$food # this exist and return Pasta, Pizza, Salad => therefore we should flatten people data frame
 
-
+peaople <- flatten(people)
+peaople$favourites.food # returns Pasta, Pizza, Salad
+  
+  
+  
 
