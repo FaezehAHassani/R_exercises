@@ -47,10 +47,12 @@ peaople <- flatten(people)
 peaople$favourites.food # returns Pasta, Pizza, Salad
   
 ###### Yelp Fusion API ##########
-source("/Users/faezeh/desktop/r_project_private/access_API_keys.R") # in terminal use: mv old_file_name new_file_name => for renaming your file
+# to get the path to a file, go to the dirctory holding the file, in terminal use pwd
+source("/Users/faezeh/desktop/r_project_private/access_API_keys.R") # in terminal use for renaming a file name: mv old_file_name new_file_name 
+
 
 base_uri <- "https://api.yelp.com/v3"  
-endpoint <- "/business/search"
+endpoint <- "/businesses/search"
 search_uri <- paste0(base_uri, endpoint)
   
 query_params <- list(
@@ -66,7 +68,7 @@ response <- GET(
   query = query_params,
   add_headers(Authorization = paste("bearer", yelp_key))
 )
-
+# print(yelp_key)
 response_text<- content(response, type = "text")
 response_data <- fromJSON(response_text)
 names(response_data)
