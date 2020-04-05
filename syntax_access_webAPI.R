@@ -46,6 +46,27 @@ people$favourites$food # this exist and return Pasta, Pizza, Salad => therefore 
 peaople <- flatten(people)
 peaople$favourites.food # returns Pasta, Pizza, Salad
   
+###### Yelp Fusion API ##########
+source("access_API_keys.R")
+
+base_uri = "https://api.yelp.com/v3"  
+endpoint <- "/business/search"
+search_uri < paste("bearer", yelp_key)
   
-  
+query_params <- list(
+  term = "restuarant",
+  categories = "cuban",
+  location = "Seattle, WA",
+  sort_by = "rating",
+  radius = 8000
+)
+
+response <- GET(
+  search_uri,
+  query = query_params,
+  add_headers(Authorization = paste("bearer", yelp_key))
+)
+
+
+
 
