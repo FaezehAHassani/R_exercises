@@ -9,8 +9,10 @@ library("jsonlite")
 
 library("dplyr")
 
+install.packages("ggrepel")
 library("ggrepel")
 
+install.packages("ggmap")
 library("ggmap")
 
 ######## Get data from web API ############
@@ -81,8 +83,16 @@ names(response_data) #return "businesses" "total"      "region"
 
 restaurants <- flatten(response_data$businesses)
 
+restuarants <- restuarants %>%
+  mutate(rank = row_number()) %>%
+  mutate(name_and_rank = paste0(rank, ".", name))
 
+##### google map
+source("/Users/faezeh/desktop/r_project_private/access_API_keys.R")
+register_google(key = "googlemap_key")
+base_map <- ggmap(get_map(location = c(lon = -95.3632715, lat = 29.7632836), zoom = 4)) # this gives erro since now google map requires API key, therefore above lines are added
 
 ##### help commands
 ? paste0
-
+?register_google
+? ggmap
