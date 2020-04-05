@@ -49,9 +49,9 @@ peaople$favourites.food # returns Pasta, Pizza, Salad
 ###### Yelp Fusion API ##########
 source("access_API_keys.R")
 
-base_uri = "https://api.yelp.com/v3"  
+base_uri <- "https://api.yelp.com/v3"  
 endpoint <- "/business/search"
-search_uri < paste("bearer", yelp_key)
+search_uri <- paste0(base_uri, endpoint)
   
 query_params <- list(
   term = "restuarant",
@@ -67,6 +67,10 @@ response <- GET(
   add_headers(Authorization = paste("bearer", yelp_key))
 )
 
+response_text<- content(response, type = "text")
+response_data <- fromJSON(response_text)
+names(response_data)
 
-
+##### help commands
+? paste0
 
