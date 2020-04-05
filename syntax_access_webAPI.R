@@ -7,6 +7,12 @@ library("httr")
 install.packages("jsonlite") # convert JSON data to R data
 library("jsonlite")
 
+library("dplyr")
+
+library("ggrepel")
+
+library("ggmap")
+
 ######## Get data from web API ############
 
 url <- "https://api.github.com/search/repositories?q=dplyr&sort=forks" # the URI to access data, this can be also typed in the web browser to see the data
@@ -68,10 +74,14 @@ response <- GET(
   query = query_params,
   add_headers(Authorization = paste("bearer", yelp_key))
 )
-# print(yelp_key)
+
 response_text<- content(response, type = "text")
 response_data <- fromJSON(response_text)
-names(response_data)
+names(response_data) #return "businesses" "total"      "region" 
+
+restaurants <- flatten(response_data$businesses)
+
+
 
 ##### help commands
 ? paste0
