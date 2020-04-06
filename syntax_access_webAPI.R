@@ -90,7 +90,7 @@ restuarants <- restuarants %>%
 ##### google map
 source("/Users/faezeh/desktop/r_project_private/access_API_keys.R")
 register_google(key = "googlemap_key")
-base_map <- ggmap(get_map(location = c(lon = -95.3632715, lat = 29.7632836), zoom = 4)) # this gives erro since now google map requires API key, therefore above lines are added
+base_map <- ggmap(get_googlemap("singapore", zoom = 12)) # this gives erro since now google map requires API key, therefore above lines are added
 
 ##### help commands
 ? paste0
