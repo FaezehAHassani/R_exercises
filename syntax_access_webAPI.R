@@ -1,6 +1,10 @@
 ######## ACCESS WEB API ###########
 
 ##### Install packages ###########
+install.packages("tidyverse") # this package includes ggplot2 for visualisation
+library("tidyverse")
+
+
 install.packages("httr") # load data from your browser to R
 library("httr")
 
@@ -21,8 +25,8 @@ library(rjson)
 library(digest)
 library(glue)
 
-devtools::install_github("dkahle/ggmap", ref = "tidyup")
-
+devtools::install_github("dkahle/ggmap", ref = "tidyup", force = TRUE)
+library("ggmap")
 
 ######## Get data from web API ############
 
@@ -100,15 +104,17 @@ rest2 <- rest %>%
 source("/Users/faezeh/desktop/r_project_private/access_API_keys.R")
 register_google(key = "googlemap_key")
 
-base_map <- ggmap(get_googlemap(center = c(-122.3, 47.60), zoom = 11)) # this gives erro since now google map requires API key, therefore above lines are added; location = c(-122.3, 47.60) (i.e. center of map) is equivalent to location = "Seattle, WA"
+base_map <- ggmap(get_map(location = c(-122.3, 47.60))) # this gives error since now google map requires API key, therefore above lines are added; location = c(-122.3, 47.60) (i.e. center of map) is equivalent to location = "Seattle, WA"
 
 base_map +
   geom_label_repel(
     data = response_data,
     aes(x = coordinates.longitude, y = coordinates.latitude, label = name_and_rank)
   )
+
 ##### help commands
 ? paste0
 ?register_google
 ? ggmap
 ?get_map
+?get_googlemap
