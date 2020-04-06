@@ -15,6 +15,8 @@ library("ggrepel")
 install.packages("ggmap")
 library("ggmap")
 
+install.packages("devtools")
+
 ######## Get data from web API ############
 
 url <- "https://api.github.com/search/repositories?q=dplyr&sort=forks" # the URI to access data, this can be also typed in the web browser to see the data
@@ -90,9 +92,14 @@ restuarants <- restuarants %>%
 ##### google map
 source("/Users/faezeh/desktop/r_project_private/access_API_keys.R")
 register_google(key = "googlemap_key")
-base_map <- ggmap(get_googlemap("singapore", zoom = 12)) # this gives erro since now google map requires API key, therefore above lines are added
-
+base_map <- ggmap(get_map(location = c(-122.3, 47.60), zoom = 11)) # this gives erro since now google map requires API key, therefore above lines are added; location = c(-122.3, 47.60) (i.e. center of map) is equivalent to location = "Seattle, WA"
+base_map +
+  geom_label_repel(
+    data = response_data,
+    aes(x = coordinates.longitude, y = coordinates.latitude, label = name_and_rank)
+  )
 ##### help commands
 ? paste0
 ?register_google
 ? ggmap
+?get
