@@ -16,6 +16,13 @@ install.packages("ggmap")
 library("ggmap")
 
 install.packages("devtools")
+library("devtools")
+library(rjson)
+library(digest)
+library(glue)
+
+devtools::install_github("dkahle/ggmap", ref = "tidyup")
+
 
 ######## Get data from web API ############
 
@@ -83,16 +90,18 @@ response_text<- content(response, type = "text")
 response_data <- fromJSON(response_text)
 names(response_data) #return "businesses" "total"      "region" 
 
-restaurants <- flatten(response_data$businesses)
+rest <- flatten(response_data$businesses)
 
-restuarants <- restuarants %>%
+rest2 <- rest %>%
   mutate(rank = row_number()) %>%
   mutate(name_and_rank = paste0(rank, ".", name))
 
 ##### google map
 source("/Users/faezeh/desktop/r_project_private/access_API_keys.R")
 register_google(key = "googlemap_key")
-base_map <- ggmap(get_map(location = c(-122.3, 47.60), zoom = 11)) # this gives erro since now google map requires API key, therefore above lines are added; location = c(-122.3, 47.60) (i.e. center of map) is equivalent to location = "Seattle, WA"
+
+base_map <- ggmap(get_googlemap(center = c(-122.3, 47.60), zoom = 11)) # this gives erro since now google map requires API key, therefore above lines are added; location = c(-122.3, 47.60) (i.e. center of map) is equivalent to location = "Seattle, WA"
+
 base_map +
   geom_label_repel(
     data = response_data,
@@ -102,4 +111,4 @@ base_map +
 ? paste0
 ?register_google
 ? ggmap
-?get
+?get_map
