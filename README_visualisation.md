@@ -12,3 +12,5 @@
 - for assessing the relationship between two categorical variables, a heat map can be used
 - representing data visually is called encoding that data. anyone can decode the visual data for interpreting the underlying values. The encoding of data can be based on position, length (e.g. stacked bar chart), area (e.g. bubble chart/ tree map), angle (e.g. pie chart), colour, and volume (e.g. 3D bar chart).
 - remember that your visual encoding should be **expressive**.
+- hue-satuartion-lightness (HSL) can be used to define colour in your visualisation. Hue: describe the colour, saturation: shows colour intensity in the scale of grey (0%) to hue (100%), lightness shows how bright is your colour in the the scale of black (0%) to shite (100%).
+- Cynthia Brewer's ColourBrewer can be accessed in _R_ through `RColorBrewer`.
