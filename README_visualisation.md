@@ -10,3 +10,4 @@
 - for comparing between two continuous variables, the best choice is scatterplot. you can also make a scatterplot matrix to present multiple comparisons between pair of variables
 - for showing relation between a categorical variable and a continuous variable you can use violin plot for each pair or use faceting for each categorical variable
 - for assessing the relationship between two categorical variables, a heat map can be used
+- representing data visually is called encoding that data. anyone can decode the visual data for interpreting the underlying values. The encoding of data can be based on position, length, area, angle, colour, and volume.
