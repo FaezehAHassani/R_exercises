@@ -16,3 +16,5 @@
  - Cynthia Brewer's ColourBrewer can be accessed in _R_ through `RColorBrewer`.
    - Sequential, diverging, multi-hue, black/white are a few examples of possible ColourBrewer scales.
 - leverage the human visual processing system (e.g. including a data point in different shape or colour from other data points)to direct user's attention => This is called preattentive processing
+- try to avoid overlapping data bay changing opacity of overlapping data, use aggregating data to use for a better representation
+- investing in aesthetics (i.e. beauty) of your graph by reducing the clutter
