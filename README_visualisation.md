@@ -15,3 +15,4 @@
  - hue-satuartion-lightness (HSL) can be used to define colour in your visualisation. Hue: describe the colour, saturation: shows colour intensity in the scale of grey (0%) to hue (100%), lightness shows how bright is your colour in the the scale of black (0%) to shite (100%).
  - Cynthia Brewer's ColourBrewer can be accessed in _R_ through `RColorBrewer`.
    - Sequential, diverging, multi-hue, black/white are a few examples of possible ColourBrewer scales.
+- leverage the human visual processing system (e.g. including a data point in different shape or colour from other data points)to direct user's attention => This is called preattentive processing
