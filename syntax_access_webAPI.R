@@ -4,7 +4,6 @@
 install.packages("tidyverse") # this package includes ggplot2 for visualisation
 library("tidyverse")
 
-
 install.packages("httr") # load data from your browser to R
 library("httr")
 
@@ -104,6 +103,7 @@ rest2 <- rest %>%
 source("/Users/faezeh/desktop/r_project_private/access_API_keys.R")
 register_google(key = "googlemap_key")
 
+###### NEED TO COMEBACK LATER ###############
 base_map <- ggmap(get_map(location = c(-122.3, 47.60))) # this gives error since now google map requires API key, therefore above lines are added; location = c(-122.3, 47.60) (i.e. center of map) is equivalent to location = "Seattle, WA"
 
 base_map +
