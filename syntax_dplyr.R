@@ -193,7 +193,7 @@ ggplot(data = delay_by_month) +
   scale_y_discrete(limits = rev(month.name)) + # removing this line will randomly put month names in y-axis, while adding rev will sort month name from jan to dec
   labs(title = "Average Delay by Month", y = "Month", x = "Delay (minutes)")
 
-####### command for help ###########
+####### commands for help ###########
 ??flights # get help on the data frame information
 ? rev
 ? title
