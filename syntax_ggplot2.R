@@ -28,10 +28,16 @@ ggplot(data = midwest) +
 ggplot(data = midwest, mapping = aes(x = percollege, y = percadultpoverty)) +
   geom_point() +
   geom_smooth() +
+  geom_point(mapping = aes(y = percchildbelowpovert)) # this geometry uses x from ggploy but uses this y instead hoever the y-axis label is still the original ggploy y-axis name
           
+# use aesthetic mapping for coloring some data
+ggplot(data = midwest) +
+  geom_point(
+    mapping = aes(x = percollege, y = percadultpoverty, color = state) # this will dedicate a color for each state name in column "state"
+  )
 
-
-
+ggplot(data = midwest) +
+  geom_point(mapping = aes(x = percollege, y = percadultpoverty), color = "red", size = 0.3) # this will color each data point red with a size of 0.3
 
 
 
