@@ -52,6 +52,15 @@ View(state_race_long)
 ggplot(state_race_long) +
   geom_col(mapping = aes(x = state, y =population, fill = race)) # fill will collor inside the bar whereas color only color the data point
 
+# the above plot overlap the population for all races in each state but in order to avoid overlap we can use filling to 100% by using position = "fill"
+ggplot(state_race_long) +
+  geom_col(mapping = aes(x = state, y = population, fill = race), position = "fill")
+
+# comparitively you can seperate the population for each reace in each state seperately besides each other by using position = 
+"dodge"
+
+
+
 ####### help commands
 ? midwest
 ? gather
