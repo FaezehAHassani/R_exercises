@@ -6,6 +6,10 @@ library("ggplot2")
 install.packages("hexbin")
 library("hexbin")
 
+library("dplyr")
+
+library("tidyr")
+
 ####### plotting midwest built-in data set within ggplot2 #####
 View(midwest)
 
@@ -39,7 +43,15 @@ ggplot(data = midwest) +
 ggplot(data = midwest) +
   geom_point(mapping = aes(x = percollege, y = percadultpoverty), color = "red", size = 0.3) # this will color each data point red with a size of 0.3
 
-
+# using dplyr and tidyr commands to wrangle data and prepare the data order required for a specific ggplotting
+state_race_long <- midwest %>%
+  select(state, popwhite, popblack, popamerindian, popasian, popother) %>%
+  gather(key = race, value = population, -state)
+View(state_race_long)
+# create stacked bar chart
+ggplot(state_race_long) +
+  geom_col(mapping = aes(x = state, y =population, fill = race)) # fill will collor inside the bar whereas color only color the data point
 
 ####### help commands
 ? midwest
+? gather
