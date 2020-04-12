@@ -72,6 +72,9 @@ View(wisconsin_data)
 michigan_data <- labeled %>% filter(state == "MI")
 View(michigan_data)
 
+x_scale <- scale_x_continuous(limits = range(labeled$percollege))
+y_scale <- scale_y_continuous(limits = range(labeled$percadultpoverty))
+color_scale <- scale_color_discrete(limits = unique(labeled$location)) # define discrete color for a unique set of urban/rural in location column
 
 
 ####### help commands
