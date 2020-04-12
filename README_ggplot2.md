@@ -21,4 +21,7 @@
   - `geom_polyon()` draw a polygon for each data point
 
 - `ggplot2` does some aggregation on data similar to `group_by` or `summarise` in `dplyr` but without actual changing of data sets.
-- aesthetic mapping can attribute position, color, size or shape to a specific part of data
+- aesthetic mapping can attribute position, colour, size or shape to a specific part of data
+- `scale_x/y_continuous()  for continuous set of numbers whereas `scale_discrete()` is for limited number of colours
+- `scale_x_reverse()` reverse the x-axis order
+- `scale_x_log10() makes the scale logarithmic`
