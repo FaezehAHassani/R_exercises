@@ -58,6 +58,19 @@ ggplot(state_race_long) +
 
 # comparitively you can seperate the population for each reace in each state seperately besides each other by using position = 
 "dodge"
+ggplot(state_race_long) +
+  geom_col(mapping = aes(x = state, y = population, fill = race), position = "dodge")
+
+# use a specific scale and limit for plots
+labeled <- midwest %>%
+  mutate(location = if_else(inmetro == 0, "Rural", "Urban")) # if inmtero is equal to zero put it as "Rural" in the location new column otherwise put as "Urban"
+View(labeled)
+
+wisconsin_data <- labeled %>% filter(state == "WI")
+View(wisconsin_data)
+
+michigan_data <- labeled %>% filter(state == "MI")
+View(michigan_data)
 
 
 
