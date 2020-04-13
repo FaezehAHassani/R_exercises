@@ -61,7 +61,7 @@ ggplot(state_race_long) +
 ggplot(state_race_long) +
   geom_col(mapping = aes(x = state, y = population, fill = race), position = "dodge")
 
-# use a specific scale and limit for plots
+# use a specific scale and limit for plots; make two plots with same coloring and scale for an easier comparison
 labeled <- midwest %>%
   mutate(location = if_else(inmetro == 0, "Rural", "Urban")) # if inmtero is equal to zero put it as "Rural" in the location new column otherwise put as "Urban"
 View(labeled)
@@ -76,7 +76,25 @@ x_scale <- scale_x_continuous(limits = range(labeled$percollege))
 y_scale <- scale_y_continuous(limits = range(labeled$percadultpoverty))
 color_scale <- scale_color_discrete(limits = unique(labeled$location)) # define discrete color for a unique set of urban/rural in location column
 
+ggplot(wisconsin_data) +
+  geom_point(mapping = aes(x = percollege, y = percadultpoverty, color = location)) +
+  x_scale +
+  y_scale +
+  color_scale
 
+ggplot(michigan_data) +
+  geom_point(mapping = aes(x = percollege, y = percadultpoverty, color = location)) +
+  x_scale +
+  y_scale +
+  color_scale
+
+# use ColorBrewer palettes for coloring in your plot
+ggplot(midwest) +
+  geom_point(
+    mapping = aes(x = percollege, y = percadultpoverty, color = state)
+  ) +
+  scale_color_brewer(palette =  "Set3")  # use Set3 color palette
+  
 ####### help commands
 ? midwest
 ? gather
