@@ -94,7 +94,23 @@ ggplot(midwest) +
     mapping = aes(x = percollege, y = percadultpoverty, color = state)
   ) +
   scale_color_brewer(palette =  "Set3")  # use Set3 color palette
-  
+
+# create horizontal bar chart
+top_10 <- midwest %>%
+  top_n(10, wt = poptotal) %>% # use top_n to filter top 10 populous county in poptotal column
+  unite(county_state, county, state, sep = ",") %>% # use unite to combine two columns
+  arrange(poptotal)%>% # sort data by population
+  mutate(location = factor(county_state, county_state)) # to define factor based on athegory variable of county_state
+
+ggplot(top_10) +
+  geom_col(mapping = aes(x = location, y = poptotal)) + # instead of changiing x and y we will use coord_flip to filp x and y-axis
+  coord_flip()
+
+View(top_10)
 ####### help commands
 ? midwest
 ? gather
+? factor
+
+
+
