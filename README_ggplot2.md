@@ -25,3 +25,5 @@
 - `scale_x/y_continuous()  for continuous set of numbers whereas `scale_discrete()` is for limited number of colours
 - `scale_x_reverse()` reverse the x-axis order
 - `scale_x_log10() makes the scale logarithmic`
+- `scale_color_manual()` to set your own set of colours
+- `scale_color_gradient()` for using continuous colour scales
