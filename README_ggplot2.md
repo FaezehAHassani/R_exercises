@@ -38,7 +38,12 @@
 - coordinate system:
 
   - `coord_cartesian()` for cartesian values
-  - `coord_flip` for flipping x and y-axis
-  - `coord_fixed` to define fixed aspect ratio for screen
-  - `coord_polar` is best for pie charts
-  - `coord_quickmap` helps to get good aspect ratio for maps
+  - `coord_flip()` for flipping x and y-axis
+  - `coord_fixed()` to define fixed aspect ratio for screen
+  - `coord_polar()` is best for pie charts
+  - `coord_quickmap()` helps to get good aspect ratio for maps
+
+- facet:
+
+ - `facet_wrap()` allows putting multiple pieces of plots in several rows based on a categorical variable
+ - `facet_function` acts as `group_by()` or `summarize()` in `dplyr` while it put all the pieces in one row
