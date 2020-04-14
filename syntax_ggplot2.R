@@ -114,7 +114,7 @@ labeled <- midwest %>%
 
 ggplot(labeled) +
   geom_point(mapping = aes(x = percollege, y = percadultpoverty, color = location), alpha = 0.6) +
-  facet_wrap(~state)
+  facet_wrap(~state) # ~"column name" means use this column to make facets based on it
          
          
   
