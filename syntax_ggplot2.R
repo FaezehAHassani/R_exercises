@@ -100,13 +100,24 @@ top_10 <- midwest %>%
   top_n(10, wt = poptotal) %>% # use top_n to filter top 10 populous county in poptotal column
   unite(county_state, county, state, sep = ",") %>% # use unite to combine two columns
   arrange(poptotal)%>% # sort data by population
-  mutate(location = factor(county_state, county_state)) # to define factor based on athegory variable of county_state
+  mutate(location = factor(county_state, county_state)) # to define factor based on cathegory variable of county_state
 
 ggplot(top_10) +
   geom_col(mapping = aes(x = location, y = poptotal)) + # instead of changiing x and y we will use coord_flip to filp x and y-axis
   coord_flip()
 
 View(top_10)
+
+# create facet based on state column as the categorical variable
+labeled <- midwest %>%
+  mutate(location = if_else(inmetro == 0, "Rural", "Urban"))
+
+ggplot(labeled) +
+  geom_point(mapping = aes(x = percollege, y = percadultpoverty, color = location), alpha = 0.6) +
+  facet_wrap(~state)
+         
+         
+  
 ####### help commands
 ? midwest
 ? gather
