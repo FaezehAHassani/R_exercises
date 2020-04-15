@@ -115,7 +115,16 @@ labeled <- midwest %>%
 ggplot(labeled) +
   geom_point(mapping = aes(x = percollege, y = percadultpoverty, color = location), alpha = 0.6) +
   facet_wrap(~state) # ~"column name" means use this column to make facets based on it
-         
+  
+# labels and annotations
+ggplot(labeled) +
+  geom_point(mapping = aes(x = percollege, y = percadultpoverty, color = location), alpha = 0.6) +
+  labs(   # to add title and x, and y-axis labels
+    title = "Percent College Educated versus Poverty Rates",
+    x = "Percentage of collge Educated Adults",
+    y = "Percentage of Adults Living in Poverty",
+    color = "Urbanity" #rename the legend title from column name "location" to "Urbanity"
+    )
          
   
 ####### help commands
