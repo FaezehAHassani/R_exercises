@@ -12,6 +12,12 @@ library("tidyr")
 
 library("ggrepel")
 
+install.packages("maps")
+library("maps")
+
+install.packages("mapproj")
+library("mapproj")
+
 ####### plotting midwest built-in data set within ggplot2 #####
 View(midwest)
 
@@ -151,7 +157,19 @@ ggplot(data = labeled, mapping = aes(x = percollege, y = percadultpoverty))  +
     y = "Percentage of Adults Living in Poverty",
     color = "Urbanity"
   )
-  
+
+# maps
+state_shape <- map_data("state") # load a shapefile, need to intsall "maps" and "mapproj" packages
+View(state_shape)
+
+ggplot(state_shape) + # create a blank map of US states
+  geom_polygon(
+    mapping = aes(x = long, y = lat, group = group),
+    color = "white", # outline color for states
+    size = 0.1
+  ) + 
+  coord_map() # use a map-based coordinate system
+
 ####### help commands
 ? midwest
 ? gather
