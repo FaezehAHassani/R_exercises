@@ -10,6 +10,8 @@ library("dplyr")
 
 library("tidyr")
 
+library("ggrepel")
+
 ####### plotting midwest built-in data set within ggplot2 #####
 View(midwest)
 
@@ -125,7 +127,30 @@ ggplot(labeled) +
     y = "Percentage of Adults Living in Poverty",
     color = "Urbanity" #rename the legend title from column name "location" to "Urbanity"
     )
-         
+
+most_poverty <- midwest %>%
+  group_by(state) %>%
+  top_n(1, wt = percadultpoverty) %>%  # select the highest poverty county in each state
+  unite(county_state, county, state, sep = ", ")
+View(most_poverty)
+
+subtitle <- "(the county with the highest level of poverty in each state is labeled"  # adding subtitle to thr plot title
+
+ggplot(data = labeled, mapping = aes(x = percollege, y = percadultpoverty))  +
+  geom_point(mapping = aes(color = location), alpha = 0.6) +
+  geom_label_repel(
+    data = most_poverty,
+    mapping = aes(label = county_state),
+    alpha = 0.8
+  ) +
+  scale_x_continuous(limits = c(0, 55)) +
+  labs(
+    title = "Percentage of College Educated Adults versus Poverty Rates",
+    subtitle = subtitle,  # defined above
+    x = "Percentage of College Educated Adults",
+    y = "Percentage of Adults Living in Poverty",
+    color = "Urbanity"
+  )
   
 ####### help commands
 ? midwest
