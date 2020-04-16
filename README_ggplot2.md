@@ -48,7 +48,14 @@
  - `facet_wrap()` allows putting multiple pieces of plots in several rows based on a categorical variable
  - `facet_function` acts as `group_by()` or `summarize()` in `dplyr` while it put all the pieces in one row
 
-- label
+- label:
  - `labs()` can bu used for adding title, labels to x and y-axis, and legend title
  - `geom_text()` add plain text to data points whereas `geom_label()` for adding boxed text to data points
  - `geom_label_repel` helps to add boxed texts without overlapping
+
+- map:
+ - two types of maps: choropleth map/heatmap and dot distribution maps can be plotted with ggplot2
+ - `geom_polygon()` can be used to define the outlines in the map. To do this, related data files/shapefiles need to be loaded that describes the geometries (outlines).
+ - shapefiles can be downloaded from online sources but ggplot2 itself includes a handful of shapefiles.
+ - shapefiles in ggplot2 can be loaded with   `map_data("state"/"usa"/"world")`command and then use `geom_polygon()` to render the map with these shapefiles.
+ - `coord_map()` can be used to define an appropriate aspect ratio for the map. 
