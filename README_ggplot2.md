@@ -47,3 +47,8 @@
 
  - `facet_wrap()` allows putting multiple pieces of plots in several rows based on a categorical variable
  - `facet_function` acts as `group_by()` or `summarize()` in `dplyr` while it put all the pieces in one row
+
+- label
+ - `labs()` can bu used for adding title, labels to x and y-axis, and legend title
+ - `geom_text()` add plain text to data points whereas `geom_label()` for adding boxed text to data points
+ - `geom_label_repel` helps to add boxed texts without overlapping
