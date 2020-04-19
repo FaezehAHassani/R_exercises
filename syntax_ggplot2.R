@@ -187,6 +187,19 @@ state_shape <- map_data("state") %>%
 
 state_shape$eviction.rate
 
+# define a minimalist theme for maps
+blank_theme <- theme_bw() +
+  theme(
+    axis.line = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.background = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank()
+  )
+
 ggplot(state_shape) +
   geom_polygon(mapping = aes(x = long, y = lat, group = group, fill = eviction.rate),
                color = "white", # show states outlines
@@ -196,8 +209,8 @@ ggplot(state_shape) +
   labs(fill = "Evication rate") +
   blank_theme  # by adding this and defined below codes we can remove axis-line
 
-# define a minimalist theme for maps
-bank_theme <- theme_bw()
+
+
 ####### help commands
 ? midwest
 ? gather
