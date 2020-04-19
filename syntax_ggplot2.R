@@ -171,19 +171,29 @@ ggplot(state_shape) + # create a blank map of US states
   coord_map() # use a map-based coordinate system
 
 # maps by using Evication lab data
-# dowload states.csv from https://evictionlab.org
-
-evictions_alaska <- read.csv("~/Desktop/r_project/data/Alaska.csv", stringsAsFactors = FALSE) 
+# dowload states.csv from https://evictionlab.org, each state has a seperate states.csv file
+evictions_alabama <- read.csv("~/Desktop/r_project/data/Alabama.csv", stringsAsFactors = FALSE) 
 evictions_arizona <- read.csv("~/Desktop/r_project/data/Arizona.csv", stringsAsFactors = FALSE) 
 evictions_delaware <- read.csv("~/Desktop/r_project/data/Delaware.csv", stringsAsFactors = FALSE) 
-evictions <- rbind(evictions_alaska, evictions_arizona, evictions_delaware) %>% # add several dataset vertically
+evictions <- rbind(evictions_alabama, evictions_arizona, evictions_delaware) %>% # add several dataset vertically
   filter(year == 2016) %>%
-  mutate(state = tolower(name))
+  mutate(name = tolower(name)) %>% #make state names lowercase to match with US shapefile
+  rename(state = name)
 
+# join evication data to US shapefile
 state_shape <- map_data("state") %>%
-  rename(state = name) %>%
-  left_join(evications, by="state")
+  rename(state = region) %>%
+  left_join(evictions, by="state")
 
+state_shape$eviction.rate
+
+ggplot(state_shape) +
+  geom_polygon(mapping = aes(x = long, y = lat, group = group, fill = eviction.rate),
+               color = "white", # show states outlines
+               size = 0.1) + # outline thickness
+  coord_map() +
+  scale_fill_continuous(low = "#132B43", high = "red") +
+  labs(fill = "Evication rate")
 
 ####### help commands
 ? midwest
