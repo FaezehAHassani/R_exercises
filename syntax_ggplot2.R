@@ -193,8 +193,11 @@ ggplot(state_shape) +
                size = 0.1) + # outline thickness
   coord_map() +
   scale_fill_continuous(low = "#132B43", high = "red") +
-  labs(fill = "Evication rate")
+  labs(fill = "Evication rate") +
+  blank_theme  # by adding this and defined below codes we can remove axis-line
 
+# define a minimalist theme for maps
+bank_theme <- theme_bw()
 ####### help commands
 ? midwest
 ? gather
