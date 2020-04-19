@@ -170,6 +170,19 @@ ggplot(state_shape) + # create a blank map of US states
   ) + 
   coord_map() # use a map-based coordinate system
 
+# maps by using Evication lab data
+# dowload states.csv from https://evictionlab.org
+
+evictions_alaska <- read.csv("~/Desktop/r_project/data/Alaska.csv", stringsAsFactors = FALSE) 
+evictions_arizona <- read.csv("~/Desktop/r_project/data/Arizona.csv", stringsAsFactors = FALSE) 
+evictions_delaware <- read.csv("~/Desktop/r_project/data/Delaware.csv", stringsAsFactors = FALSE) 
+evictions <- rbind(evictions_alaska, evictions_arizona, evictions_delaware) # add several dataset vertically
+
+%>%
+  filter(year == 2016) %>%
+  mutate(state = )
+
+
 ####### help commands
 ? midwest
 ? gather
