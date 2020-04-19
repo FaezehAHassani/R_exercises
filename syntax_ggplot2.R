@@ -176,17 +176,21 @@ ggplot(state_shape) + # create a blank map of US states
 evictions_alaska <- read.csv("~/Desktop/r_project/data/Alaska.csv", stringsAsFactors = FALSE) 
 evictions_arizona <- read.csv("~/Desktop/r_project/data/Arizona.csv", stringsAsFactors = FALSE) 
 evictions_delaware <- read.csv("~/Desktop/r_project/data/Delaware.csv", stringsAsFactors = FALSE) 
-evictions <- rbind(evictions_alaska, evictions_arizona, evictions_delaware) # add several dataset vertically
-
-%>%
+evictions <- rbind(evictions_alaska, evictions_arizona, evictions_delaware) %>% # add several dataset vertically
   filter(year == 2016) %>%
-  mutate(state = )
+  mutate(state = tolower(name))
+
+state_shape <- map_data("state") %>%
+  rename(state = name) %>%
+  left_join(evications, by="state")
 
 
 ####### help commands
 ? midwest
 ? gather
 ? factor
+? tolower
+
 
 
 
