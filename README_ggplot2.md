@@ -58,4 +58,6 @@
  - `geom_polygon()` can be used to define the outlines in the map. To do this, related data files/shapefiles need to be loaded that describes the geometries (outlines).
  - shapefiles can be downloaded from online sources but ggplot2 itself includes a handful of shapefiles.
  - shapefiles in ggplot2 can be loaded with   `map_data("state"/"usa"/"world")`command and then use `geom_polygon()` to render the map with these shapefiles.
- - `coord_map()` can be used to define an appropriate aspect ratio for the map. 
+ - `coord_map()` can be used to define an appropriate aspect ratio for the map.
+ - for adding points to states map we can `geom_point` to `geom_polygon` but we need to define latitude and longitude for each point. since adding all the lat and long details is difficult, you can use map images instead of `map_data("state")`. These images are called **map tiles**.
+ - `ggmap` provides a nice selection of map tiles for `ggplot`. 
