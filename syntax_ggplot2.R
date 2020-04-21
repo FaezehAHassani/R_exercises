@@ -174,8 +174,15 @@ ggplot(state_shape) + # create a blank map of US states
 # dowload states.csv from https://evictionlab.org, each state has a seperate states.csv file
 evictions_alabama <- read.csv("~/Desktop/r_project/data/Alabama.csv", stringsAsFactors = FALSE) 
 evictions_arizona <- read.csv("~/Desktop/r_project/data/Arizona.csv", stringsAsFactors = FALSE) 
-evictions_delaware <- read.csv("~/Desktop/r_project/data/Delaware.csv", stringsAsFactors = FALSE) 
-evictions <- rbind(evictions_alabama, evictions_arizona, evictions_delaware) %>% # add several dataset vertically
+evictions_delaware <- read.csv("~/Desktop/r_project/data/Delaware.csv", stringsAsFactors = FALSE)
+evictions_california <- read.csv("~/Desktop/r_project/data/California.csv", stringsAsFactors = FALSE)
+evictions_colorado <- read.csv("~/Desktop/r_project/data/Colorado.csv", stringsAsFactors = FALSE)
+evictions_connectticut <- read.csv("~/Desktop/r_project/data/Connecticut.csv", stringsAsFactors = FALSE)
+evictions_florida <- read.csv("~/Desktop/r_project/data/Florida.csv", stringsAsFactors = FALSE)
+evictions_georgia <- read.csv("~/Desktop/r_project/data/Georgia.csv", stringsAsFactors = FALSE)
+evictions_west_virginia <- read.csv("~/Desktop/r_project/data/West_Virginia.csv", stringsAsFactors = FALSE)
+evictions_wisconsin <- read.csv("~/Desktop/r_project/data/Wisconsin.csv", stringsAsFactors = FALSE)
+evictions <- rbind(evictions_alabama, evictions_arizona, evictions_delaware, evictions_california, evictions_colorado, evictions_connectticut, evictions_florida, evictions_georgia, evictions_west_virginia, evictions_wisconsin) %>% # add several dataset vertically
   filter(year == 2016) %>%
   mutate(name = tolower(name)) %>% #make state names lowercase to match with US shapefile
   rename(state = name)
