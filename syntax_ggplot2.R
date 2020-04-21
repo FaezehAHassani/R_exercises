@@ -180,9 +180,9 @@ evictions_colorado <- read.csv("~/Desktop/r_project/data/Colorado.csv", stringsA
 evictions_connectticut <- read.csv("~/Desktop/r_project/data/Connecticut.csv", stringsAsFactors = FALSE)
 evictions_florida <- read.csv("~/Desktop/r_project/data/Florida.csv", stringsAsFactors = FALSE)
 evictions_georgia <- read.csv("~/Desktop/r_project/data/Georgia.csv", stringsAsFactors = FALSE)
-evictions_west_virginia <- read.csv("~/Desktop/r_project/data/West_Virginia.csv", stringsAsFactors = FALSE)
+evictions_westvirginia <- read.csv("~/Desktop/r_project/data/WestVirginia.csv", stringsAsFactors = FALSE)
 evictions_wisconsin <- read.csv("~/Desktop/r_project/data/Wisconsin.csv", stringsAsFactors = FALSE)
-evictions <- rbind(evictions_alabama, evictions_arizona, evictions_delaware, evictions_california, evictions_colorado, evictions_connectticut, evictions_florida, evictions_georgia, evictions_west_virginia, evictions_wisconsin) %>% # add several dataset vertically
+evictions <- rbind(evictions_alabama, evictions_arizona, evictions_delaware, evictions_california, evictions_colorado, evictions_connectticut, evictions_florida, evictions_georgia, evictions_westvirginia, evictions_wisconsin) %>% # add several dataset vertically
   filter(year == 2016) %>%
   mutate(name = tolower(name)) %>% #make state names lowercase to match with US shapefile
   rename(state = name)
