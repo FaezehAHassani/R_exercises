@@ -216,6 +216,17 @@ ggplot(state_shape) +
   labs(fill = "Evication rate") +
   blank_theme  # by adding this and defined below codes we can remove axis-line
 
+# dot distribution maps
+# add dots to specific states
+cities <- data.frame(
+  city = c("Seattle", "Denver"),
+  lat = c(47.6062, 39.7392),
+  long = c(-122.3321, -104.9903)
+)
+
+# draw state outline, then plot dots
+ggplot(state_shape) +
+  geom_polygon(mapping = aes(x = long, y = lat, group = group))
 
 
 ####### help commands
