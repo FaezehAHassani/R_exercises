@@ -226,7 +226,13 @@ cities <- data.frame(
 
 # draw state outline, then plot dots
 ggplot(state_shape) +
-  geom_polygon(mapping = aes(x = long, y = lat, group = group))
+  geom_polygon(mapping = aes(x = long, y = lat, group = group)) +
+  geom_point(
+    data = cities,
+    mapping = aes(x = long, y = lat),
+    color ="red"
+  ) +
+  coord_map()
 
 
 ####### help commands
