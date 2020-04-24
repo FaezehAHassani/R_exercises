@@ -18,6 +18,8 @@ library("maps")
 install.packages("mapproj")
 library("mapproj")
 
+library("ggmap")
+
 ####### plotting midwest built-in data set within ggplot2 #####
 View(midwest)
 
@@ -248,17 +250,22 @@ notices_2017 <- notices %>%
   )
 View(notices_2017)
 
-
-
-
-
-
-%>%
-  separate(Location, c("lat", "long"), " ") %>%  # split LOcation column at ","
-  mutate(
-    lat = as.numeric(gsub("\\(", "", lat)),  # remove "(" from the starting string in Location column and use it as number
-    long = as.numeric(gsub("\\)", "", long))       # remove ")" from the string ending in Location column and use it as number
+# create the backgroung of map tiles
+base_plot <- qmplot(
+  data = notices_2017,
+  x = long,
+  y = lat,
+  geom = "blank",
+  maptype = "toner-background",
+  darken = 0.7,
+  legend = "topleft"
 )
+
+base_plot + geom_point(mapping = aes(x = long, y = lat), color = "red", alpha = 0.3) +
+  labs(title = "Evications in San Francisco, 2017") +
+  theme(plot.margin = margin(0.3, 0, 0, 0, "cm"))
+
+
 
 notices_2017$lat
 
