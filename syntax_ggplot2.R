@@ -239,8 +239,21 @@ notices <- read.csv("~/Desktop/r_project/data/Eviction_Notices.csv", stringsAsFa
 View(notices)
 
 notices_2017 <- notices %>%
-  mutate(date = as.Date(File.Date, format = "y/%m/%d"))%>%
+  mutate(date = as.Date(File.Date, format = "%m/%d/%Y")) %>%
   filter(format(date, "%Y") == "2017") %>%
+  separate(Location, c("point", "lat", "long"), " ") %>%  # split Lcation column to three seperate columns at " "
+  mutate(
+    lat = as.numeric(gsub("\\(", "", lat)),  # remove "(" from the starting string in Location column and use it as number
+    long = as.numeric(gsub("\\)", "", long))       # remove ")" from the string ending in Location column and use it as number
+  )
+View(notices_2017)
+
+
+
+
+
+
+%>%
   separate(Location, c("lat", "long"), " ") %>%  # split LOcation column at ","
   mutate(
     lat = as.numeric(gsub("\\(", "", lat)),  # remove "(" from the starting string in Location column and use it as number
