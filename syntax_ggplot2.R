@@ -234,13 +234,27 @@ ggplot(state_shape) +
   ) +
   coord_map()
 
+# data downloaded from https://catalog.data.gov/dataset/eviction-notices => Eviction_Notices.csv
+notices <- read.csv("~/Desktop/r_project/data/Eviction_Notices.csv", stringsAsFactors = FALSE)
+View(notices)
+
+notices_2017 <- notices %>%
+  mutate(date = as.Date(File.Date, format = "%m/%d/%Y")) %>%
+  filter(format(date, "%Y") == 2017) %>%
+  separate(location, c("lat", "long", ",")) %>% # split LOcation column at ","
+  mutate(
+    lat = as.numeric(gsub("\\(", "", lat)), # remove "(" from the starting string in Location column and use it as number)
+    long = as.numeric(gsub("\\)", "", long))     
+)
+
+
 
 ####### help commands
 ? midwest
 ? gather
 ? factor
 ? tolower
-
+?as.Date
 
 
 
