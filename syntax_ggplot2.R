@@ -264,13 +264,13 @@ View(notices_2017)
 # removing NA from lat and long columns
 notices_2017_noNA <- notices_2017 %>%
   drop_na(lat) %>%
-  drop_na(lat) 
+  drop_na(long) 
 
 View(notices_2017_noNA$lat)
 
 # create the backgroung of map tiles
 base_plot <- get_stamenmap(  # I used get_stamenmap instead of recommended qmplot that returned an error
-  data = notices_2017,
+  data = notices_2017_noNA,
   x = long,
   y = lat,
   geom = "blank",
@@ -281,18 +281,20 @@ base_plot <- get_stamenmap(  # I used get_stamenmap instead of recommended qmplo
 
 ggmap(base_plot) # plot map tile
 
+notices_2017_noNA$lat  <- as.numeric(notices_2017_noNA$lat)
+notices_2017_noNA$long <- as.numeric(notices_2017_noNA$long)
+
 base_plot + 
-  geom_point(
-    mapping = aes(x = long, y = lat), 
-    color = "red", 
-    alpha = 0.3
-    ) +
-  labs(title = "Evications in San Francisco, 2017") +
+  geom_point(mapping = aes(x = long, y = lat), color = "red", alpha = 0.3) +
+  labs(title = "Evications in San Francisco, 2017")
+
+
+
   theme(plot.margin = margin(0.3, 0, 0, 0, "cm"))
 
 
 
-notices_2017$lat
+notices_2017$long
 
 
 ####### help commands
