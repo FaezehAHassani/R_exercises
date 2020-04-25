@@ -20,6 +20,16 @@ library("mapproj")
 
 library("ggmap")
 
+install.packages("devtools")
+library("devtools")
+library(rjson)
+library(digest)
+library(glue)
+
+devtools::install_github("dkahle/ggmap", ref = "tidyup", force = TRUE)
+library("ggmap")
+
+
 ####### plotting midwest built-in data set within ggplot2 #####
 View(midwest)
 
@@ -251,7 +261,7 @@ notices_2017 <- notices %>%
 View(notices_2017)
 
 # create the backgroung of map tiles
-base_plot <- qmplot(
+base_plot <- get_stamenmap(  # I used get_stamenmap instead of recommended qmplot that returned an error
   data = notices_2017,
   x = long,
   y = lat,
@@ -261,7 +271,10 @@ base_plot <- qmplot(
   legend = "topleft"
 )
 
-base_plot + geom_point(mapping = aes(x = long, y = lat), color = "red", alpha = 0.3) +
+ggmap(base_plot) # plot map tile
+
+base_plot + 
+  geom_point(mapping = aes(x = long, y = lat), color = "red", alpha = 0.3) +
   labs(title = "Evications in San Francisco, 2017") +
   theme(plot.margin = margin(0.3, 0, 0, 0, "cm"))
 
@@ -277,5 +290,5 @@ notices_2017$lat
 ? tolower
 ?as.Date
 ?gsub
-
+?qmplot
 
