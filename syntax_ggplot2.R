@@ -258,7 +258,15 @@ notices_2017 <- notices %>%
     lat = as.numeric(gsub("\\(", "", lat)),  # remove "(" from the starting string in Location column and use it as number
     long = as.numeric(gsub("\\)", "", long))       # remove ")" from the string ending in Location column and use it as number
   )
+
 View(notices_2017)
+
+# removing NA from lat and long columns
+notices_2017_noNA <- notices_2017 %>%
+  drop_na(lat) %>%
+  drop_na(lat) 
+
+View(notices_2017_noNA$lat)
 
 # create the backgroung of map tiles
 base_plot <- get_stamenmap(  # I used get_stamenmap instead of recommended qmplot that returned an error
@@ -274,7 +282,11 @@ base_plot <- get_stamenmap(  # I used get_stamenmap instead of recommended qmplo
 ggmap(base_plot) # plot map tile
 
 base_plot + 
-  geom_point(mapping = aes(x = long, y = lat), color = "red", alpha = 0.3) +
+  geom_point(
+    mapping = aes(x = long, y = lat), 
+    color = "red", 
+    alpha = 0.3
+    ) +
   labs(title = "Evications in San Francisco, 2017") +
   theme(plot.margin = margin(0.3, 0, 0, 0, "cm"))
 
