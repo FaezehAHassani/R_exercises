@@ -284,13 +284,19 @@ ggmap(base_plot) # plot map tile
 notices_2017_noNA$lat  <- as.numeric(notices_2017_noNA$lat)
 notices_2017_noNA$long <- as.numeric(notices_2017_noNA$long)
 
+
 base_plot + 
-  geom_point(mapping = aes(x = long, y = lat), color = "red", alpha = 0.3) +
-  labs(title = "Evications in San Francisco, 2017")
+  geom_point(mapping = aes(x = long, y = lat), color = "red", alpha = 0.3) 
+
+
+#
+
+#+
+  #labs(title = "Evications in San Francisco, 2017")
 
 
 
-  theme(plot.margin = margin(0.3, 0, 0, 0, "cm"))
+ # theme(plot.margin = margin(0.3, 0, 0, 0, "cm"))
 
 
 
