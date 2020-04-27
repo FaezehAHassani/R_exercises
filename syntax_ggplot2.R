@@ -281,6 +281,17 @@ base_plot +
   labs(title = "Evications in San Francisco, 2017") +
   theme(plot.margin = margin(0.3, 0, 0, 0, "cm"))
 
+# make a contour/heat map for the above eviction notices data
+base_plot +
+  geom_polygon(
+    stat = "density2d", # calculate 2d density of points in the above plot to make a contour
+    mapping = aes(fill = stat(level)),
+    alpha = 0.3 # set transparency 
+  ) +
+  scale_fill_gradient2(
+    "# of Evications",  # title of legend
+    low = "white", # defining contour lines
+  )
 ####### help commands
 ? midwest
 ? gather
