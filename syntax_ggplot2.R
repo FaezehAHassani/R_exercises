@@ -18,17 +18,14 @@ library("maps")
 install.packages("mapproj")
 library("mapproj")
 
-library("ggmap")
-
 install.packages("devtools")
 library("devtools")
 library(rjson)
 library(digest)
 library(glue)
 
-devtools::install_github("dkahle/ggmap", ref = "tidyup", force = TRUE)
+devtools::install_github("dkahle/ggmap")
 library("ggmap")
-
 
 ####### plotting midwest built-in data set within ggplot2 #####
 View(midwest)
@@ -266,42 +263,23 @@ notices_2017_noNA <- notices_2017 %>%
   drop_na(lat) %>%
   drop_na(long) 
 
-View(notices_2017_noNA$lat)
+View(notices_2017_noNA)
 
 # create the backgroung of map tiles
-base_plot <- get_stamenmap(  # I used get_stamenmap instead of recommended qmplot that returned an error
+base_plot <- qmplot(  # I used get_stamenmap instead of recommended qmplot that returned an error
   data = notices_2017_noNA,
-  x = long,
-  y = lat,
+  x = lat,  # remmber in the book wrongly put x = long and y = lat
+  y = long,
   geom = "blank",
   maptype = "toner-background",
   darken = 0.7,
   legend = "topleft"
 )
 
-ggmap(base_plot) # plot map tile
-
-notices_2017_noNA$lat  <- as.numeric(notices_2017_noNA$lat)
-notices_2017_noNA$long <- as.numeric(notices_2017_noNA$long)
-
-
 base_plot + 
-  geom_point(mapping = aes(x = long, y = lat), color = "red", alpha = 0.3) 
-
-
-#
-
-#+
-  #labs(title = "Evications in San Francisco, 2017")
-
-
-
- # theme(plot.margin = margin(0.3, 0, 0, 0, "cm"))
-
-
-
-notices_2017$long
-
+  geom_point(mapping = aes(x = lat, y = long), color = "red", alpha = 0.3) +
+  labs(title = "Evications in San Francisco, 2017") +
+  theme(plot.margin = margin(0.3, 0, 0, 0, "cm"))
 
 ####### help commands
 ? midwest
@@ -311,4 +289,4 @@ notices_2017$long
 ?as.Date
 ?gsub
 ?qmplot
-
+? get_map
