@@ -291,7 +291,12 @@ base_plot +
   scale_fill_gradient2(
     "# of Evications",  # title of legend
     low = "white", # defining contour lines
-  )
+    mid = "yellow",
+    high = "red"
+  ) +
+  labs(title = "Number of Evictions in San Francisco in 2017") +
+  theme(plot.margin = margin(0.3, 0, 0, 0, "cm"))
+
 ####### help commands
 ? midwest
 ? gather
