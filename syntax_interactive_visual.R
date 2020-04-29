@@ -15,15 +15,33 @@ flowerplot <- ggplot(iris) +
 ggplotly(flowerplot)
 
 # similar to the above, below codes with plot_ly can create a similar interactive plot
-
 plot_ly(
   data = iris,
   x = ~Sepal.Width,
   y = ~Petal.Width,
-  color = Species,
+  color = ~Species,
   type = "scatter",
   mode = "markers"
 )
+
+# to add labels to the created plt with plot_ly
+plot_ly(
+  iris,
+  x = ~Sepal.Width,
+  y = ~Petal.Width,
+  color = ~Species,
+  type = "scatter",
+  mode ="markers"
+) %>%
+  layout(
+    title = "Iris Data Set Visualization",
+    xaxis = list(title = "Sepal Width", ticksuffix = "cm"), # add xaxis title as well as adding cm to each valu on xa-axis
+    yaxis = list(title = "Petal Width", ticksuffix = "cm")
+  )
+
+
+
+
 
 
 
