@@ -12,3 +12,4 @@
   ## `Bokeh`
   - `figure()` is defining the plotting area similar to `ggplot()` and `plot_ly` on which you can add `ly_prefix` to add points, a and y-axis
   -`Bokeh` uses pipelining style with %>% rather than + used in `ggplot`
+  -`Bokeh` add the interaction menu on the right side of the plot while in `Plotly` this interaction menu is not visible in the plot.
