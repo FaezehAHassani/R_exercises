@@ -27,7 +27,7 @@ plot_ly(
   mode = "markers"
 )
 
-# to add labels to the created plt with plot_ly
+# to add labels to the created plot with plot_ly
 plot_ly(
   iris,
   x = ~Sepal.Width,
@@ -42,8 +42,23 @@ plot_ly(
     yaxis = list(title = "Petal Width", ticksuffix = "cm")
   )
 
-
-
+# use rbokeh to create interactive plot
+figure(data = iris, title = "Iris data set visualisation") %>%
+  ly_points(
+    Sepal.Width,
+    Petal.Width,
+    color = Species
+  ) %>%
+  x_axis(
+    label = "Sepal Width",
+    number_formatter = "printf", # define a specific tick along the x-axis
+    format = "%s cm", # don't forget , even for the last line; this add cm with a space after each number along the x-axis
+  ) %>%
+  y_axis(
+    label = "Petal Width",
+    number_formatter = "printf",
+    format = "%s cm",
+  )
 
 
 
