@@ -3,6 +3,9 @@
 install.packages("plotly")
 library("plotly")
 
+devtools::install_github("hafen/rbokeh")
+library("rbokeh")
+
 ####### plotting iris built-in data set within ggplot2 #####
 View(iris)
 
