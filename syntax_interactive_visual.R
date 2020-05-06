@@ -76,7 +76,7 @@ leaflet() %>%  # making a blank tile set
   addProviderTiles("CartoDB.Positron") %>%  # first this didn't load the map so I download new RStudio from "https://dailies.rstudio.com" and run all the libraries again, then it started to work correctly 
   setView(lng = -122.3321, lat = 47.6062, zoom = 10) # center the map on Seattle
 
-# create data frame of locations to add the above blank map tile
+# create data frame of 2 locations to be added to the above blank map tile
 locations <- data.frame(
   label = c("University of Washington", "Seattle Central College"),
   lattitude = c(47.6553, 47.6163),
@@ -84,4 +84,15 @@ locations <- data.frame(
 )
 
 View(locations)
+
+leaflet(data = locations) %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  setView(lng = -122.3321, lat = 47.6062, zoom =11) %>%
+  addCircles(
+    lat = ~lattitude,
+    lng = ~longitude,
+    popup = ~label,  # this will allow the label to pop up as soon you hover on the circle
+    radius =  500,
+    stroke = FALSE
+   )
 ####### help commands
