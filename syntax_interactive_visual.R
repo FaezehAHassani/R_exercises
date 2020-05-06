@@ -91,7 +91,7 @@ leaflet(data = locations) %>%
   addCircles(
     lat = ~lattitude,
     lng = ~longitude,
-    popup = ~label,  # this will allow the label to pop up as soon you hover on the circle
+    popup =  ~label,  # this will allow the label to pop up as soon you click on the circle; label =  ~label will allow the labels to popup as soon as you hover on the circles
     radius =  500,
     stroke = FALSE
    )
