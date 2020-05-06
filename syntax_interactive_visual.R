@@ -6,6 +6,9 @@ library("plotly")
 devtools::install_github("hafen/rbokeh")
 library("rbokeh")
 
+install.packages("leaflet")
+library("leaflet")
+
 ####### plotting iris built-in data set within ggplot2 #####
 View(iris)
 
@@ -60,6 +63,7 @@ figure(data = iris, title = "Iris data set visualisation") %>%
     format = "%s cm",
   )
 
+# use leaflet to build interactive maps
 
 
 
