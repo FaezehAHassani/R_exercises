@@ -64,7 +64,8 @@ figure(data = iris, title = "Iris data set visualisation") %>%
   )
 
 # use leaflet to build interactive maps
-
-
+leaflet() %>%  # making a blank tile set
+  addProviderTiles("CartoDB.Positron") %>%
+  setView(lng = -122.3321, lat = 47.6062, zoom = 10) # center the map on Seattle
 
 ####### help commands
