@@ -1,5 +1,11 @@
 ########## Interactive visualisation in R ##########
 
+library("dplyr")
+
+library("tidyr")
+
+library("ggplot2")
+
 install.packages("plotly")
 library("plotly")
 
@@ -9,6 +15,8 @@ library("rbokeh")
 install.packages("leaflet")
 library("leaflet")
 
+devtools::install_github("rstudio/leaflet.providers")
+library(leaflet.providers)
 ####### plotting iris built-in data set within ggplot2 #####
 View(iris)
 
@@ -65,7 +73,7 @@ figure(data = iris, title = "Iris data set visualisation") %>%
 
 # use leaflet to build interactive maps
 leaflet() %>%  # making a blank tile set
-  addProviderTiles("CartoDB.Positron") %>%
+  addProviderTiles("CartoDB.Positron") %>%  # first this didn't load the map so I download new RStudio from "https://dailies.rstudio.com" and run all the libraries again, then it started to work correctly 
   setView(lng = -122.3321, lat = 47.6062, zoom = 10) # center the map on Seattle
 
 ####### help commands
