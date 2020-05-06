@@ -16,3 +16,7 @@
 
   ## `Leaflet`
   - `Leaflet` is an open source JavaScript library for interactive maps
+  - `leaflet()` makes the blank canvas for your plot similar to `ggplot()`
+  - map tiles can then be added by using `addTiles()` function by piping method using %>%. You can mention the name of tile set or add the URL schema for the tiles
+  - `Leaflet` by default uses OpenSreetMap tiles
+  - you can alternatively use the map tiles from other providers by using `addProviderTiles()` function and mentioning the name of the tile set
