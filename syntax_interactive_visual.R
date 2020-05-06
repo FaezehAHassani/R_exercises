@@ -76,4 +76,12 @@ leaflet() %>%  # making a blank tile set
   addProviderTiles("CartoDB.Positron") %>%  # first this didn't load the map so I download new RStudio from "https://dailies.rstudio.com" and run all the libraries again, then it started to work correctly 
   setView(lng = -122.3321, lat = 47.6062, zoom = 10) # center the map on Seattle
 
+# create data frame of locations to add the above blank map tile
+locations <- data.frame(
+  label = c("University of Washington", "Seattle Central College"),
+  lattitude = c(47.6553, 47.6163),
+  longitude = c(-122.3035, -122.3216)
+)
+
+View(locations)
 ####### help commands
