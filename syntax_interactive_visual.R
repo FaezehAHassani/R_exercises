@@ -117,6 +117,12 @@ new_buildings2010 <- new_buildings2010 %>%
 
 View(new_buildings2010)
 
+# count number of permits per year, one column "year" and one column "n" that shows counts
+by_year <- new_buildings2010 %>%
+  group_by(year) %>%
+  count()
+
+View(by_year)
 
 ####### help commands
 ? substr
