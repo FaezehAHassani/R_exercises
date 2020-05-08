@@ -131,7 +131,7 @@ plot_ly(
   y = ~n,
   type = "bar",
   alpha = 0.7, # adjust the opacity of bar
-  hovertext = "y" # show the y value when hover on a bar
+  hoverinfo = "y" # show the y value when hover on a bar => had to use hoverinfo contary to hovertext in the book, hovertext showed both year and number whereas I required to show only number while hovering the bar
 ) %>%
   layout(
     title = " Number of New Building Permits per year in Seattle",
@@ -141,3 +141,4 @@ plot_ly(
 
 ####### help commands
 ? substr
+? layout
