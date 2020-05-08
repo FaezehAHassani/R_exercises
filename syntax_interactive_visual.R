@@ -124,5 +124,19 @@ by_year <- new_buildings2010 %>%
 
 View(by_year)
 
+plot_ly(
+  data = by_year,
+  x = ~year,
+  y = ~n,
+  type = "bar",
+  alpha = 0.7, # adjust the opacity of bar
+  hovertext = "y", # show the y value when hover on a bar
+) %>%
+  layout(
+    title = " Number of New Building Permits per year in Seattle",
+    xaxis = list(title = "Year"), # show x-axis name of Year but also show each year
+    yaxis = list(title = "Number of Permits")
+  )
+
 ####### help commands
 ? substr
