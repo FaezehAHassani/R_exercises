@@ -109,6 +109,14 @@ new_buildings2010 <- all_permits %>%
     as.Date(all_permits$IssuedDate) >= as.Date("2010-01-01") # filter rows from IssudeDate columns after or on date of 2018-01-01
   )
 
+View(new_buildings2010)
+
+# want to count number of permits per year in new_buildings2010
+new_buildings2010 <- new_buildings2010 %>%
+  mutate(year = substr(IssuedDate, 1, 4))  # add a new column names "year" and extract the year from IssuedDate columns by using substr command that start character is the 1st character and end character is the 4th character
+
+View(new_buildings2010)
 
 
 ####### help commands
+? substr
