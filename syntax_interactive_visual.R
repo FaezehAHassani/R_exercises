@@ -95,4 +95,20 @@ leaflet(data = locations) %>%
     radius =  500,
     stroke = FALSE
    )
+
+# plotting City of Seattle Land Use Permits data downloaded from https://data.seattle.gov
+all_permits <- read.csv("data/Building_Permits.csv")
+
+View(all_permits)
+
+# filter to buildings from 2010 and later
+new_buildings2010 <- all_permits %>%
+  filter(
+    PermitTypeDesc == "New",
+    PermitClass != "N/A",  #!= not equal
+    as.Date(all_permits$IssuedDate) >= as.Date("2010-01-01") # filter rows from IssudeDate columns after or on date of 2018-01-01
+  )
+
+
+
 ####### help commands
