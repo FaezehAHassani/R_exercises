@@ -97,7 +97,7 @@ leaflet(data = locations) %>%
     stroke = FALSE
    )
 
-# plotting City of Seattle Land Use Permits data downloaded from https://data.seattle.gov
+#### plotting City of Seattle Land Use Permits data downloaded from https://data.seattle.gov
 all_permits <- read.csv("data/Building_Permits.csv")
 
 View(all_permits)
@@ -139,6 +139,17 @@ plot_ly(
     yaxis = list(title = "Number of Permits")
   )
 
+# plotting leaflet map with circle markers
+leaflet(new_buildings2010) %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  setView(lng = -122.3321, lat = 47.6062, zoom = 10) %>%
+  addCircles(
+    lat = ~Latitude,
+    lng = ~Longitude,
+    stroke = FALSE,  # remove border from each circle
+    popup = ~Description
+  )
+  
 ####### help commands
 ? substr
 ? layout
