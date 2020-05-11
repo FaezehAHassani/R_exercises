@@ -149,7 +149,23 @@ leaflet(new_buildings2010) %>%
     stroke = FALSE,  # remove border from each circle
     popup = ~Description
   )
-  
+
+# leaflet map with colored circles and legend
+platten_fn <- colorFactor(palette = "Set3", domain = new_buildings2010$PermitClass) # a function to make a clor based on the PermitClass column
+leaflet(new_buildings2010) %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  setView(lng = -122.3321, lat = 47.6062, zoom = 10) %>%
+  addCircles(
+    lat = ~Latitude,
+    lng = ~Longitude,
+    stroke = FALSE,  
+    popup = ~Description,
+    color = ~platten_fn(PermitClass)
+  )
+
+
+
+
 ####### help commands
 ? substr
 ? layout
