@@ -160,7 +160,9 @@ leaflet(new_buildings2010) %>%
     lng = ~Longitude,
     stroke = FALSE,  
     popup = ~Description,
-    color = ~palette_fn(PermitClass)
+    color = ~palette_fn(PermitClass),
+    radius = 20,
+    fillOpacity = 0.5
   ) %>%
   addLegend(
       position = "bottomright",
@@ -169,9 +171,6 @@ leaflet(new_buildings2010) %>%
       values = ~PermitClass,
       opacity = 1
    ) 
-
-
-
 
 ####### help commands
 ? substr
