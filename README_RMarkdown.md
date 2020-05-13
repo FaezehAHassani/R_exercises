@@ -9,3 +9,4 @@
   - Markdown content: it is imilar to writing in Markdown
   - R code chunks: segments of R codes that can be avaluated and rendered. You can add them by **```{r}**
   - after finishing of your file, press "Knit" so it generates the html file in the same folder of your .Rmd file
+- it is better you have a separate .R file with your codes then use source() to call the file in .Rmd file
