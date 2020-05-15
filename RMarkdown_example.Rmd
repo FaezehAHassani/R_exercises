@@ -36,7 +36,7 @@ cat(fruits)
 This is my fruits list:
 `r fruits` 
 
-```{r list_example, echo = FALSE}
+```{r list_example}
 markdown_list <- "
 - Lion
 - Tigers
@@ -47,7 +47,12 @@ markdown_list <- "
 
 `r markdown_list`
 
+```{r pasted_list_example}
+animals <- c("Lions", "Tigers", "Bears", "Oh mys")
+markdown_list <- paste("-", animals, collapse = "\n")
+```
 
+`r markdown_list`
 
 ## Including Plots
 
