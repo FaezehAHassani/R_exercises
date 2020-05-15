@@ -30,7 +30,11 @@ summary(cars)
 ```{r}
 source("test_for_RMarkdown.R")
 print(fruits)
+cat(fruits)
 ```
+
+This is my fruits list:
+`r fruits` 
 
 ## Including Plots
 
