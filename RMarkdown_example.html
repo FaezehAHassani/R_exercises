@@ -384,6 +384,8 @@ summary {
 
 <div id="r-markdown" class="section level2">
 <h2>R Markdown</h2>
+<p>7</p>
+<p>I have 5 apples.</p>
 <p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
 <p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
 <pre class="r"><code>summary(cars)</code></pre>
@@ -396,7 +398,30 @@ summary {
 ##  Max.   :25.0   Max.   :120.00</code></pre>
 <pre class="r"><code>source(&quot;test_for_RMarkdown.R&quot;)
 print(fruits)</code></pre>
-<pre><code>## [1] &quot;orange&quot;  &quot;apple&quot;   &quot;apricot&quot; &quot;bananas&quot;</code></pre>
+<pre><code>## [1] &quot;**orange**&quot; &quot;**apple**&quot;  &quot;apricot&quot;    &quot;bananas&quot;</code></pre>
+<pre class="r"><code>cat(fruits)</code></pre>
+<pre><code>## **orange** **apple** apricot bananas</code></pre>
+<p>This is my fruits list: <strong>orange</strong>, <strong>apple</strong>, apricot, bananas</p>
+<pre class="r"><code>markdown_list &lt;- &quot;
+- Lion
+- Tigers
+- Bears
+- Oh mys
+&quot;</code></pre>
+<ul>
+<li>Lion</li>
+<li>Tigers</li>
+<li>Bears</li>
+<li>Oh mys</li>
+</ul>
+<pre class="r"><code>animals &lt;- c(&quot;Lions&quot;, &quot;Tigers&quot;, &quot;Bears&quot;, &quot;Oh mys&quot;)
+markdown_list &lt;- paste(&quot;-&quot;, animals, collapse = &quot;\n&quot;)</code></pre>
+<ul>
+<li>Lions</li>
+<li>Tigers</li>
+<li>Bears</li>
+<li>Oh mys</li>
+</ul>
 </div>
 <div id="including-plots" class="section level2">
 <h2>Including Plots</h2>
