@@ -36,6 +36,19 @@ cat(fruits)
 This is my fruits list:
 `r fruits` 
 
+```{r list_example, echo = FALSE}
+markdown_list <- "
+- Lion
+- Tigers
+- Bears
+- Oh mys
+"
+```
+
+`r markdown_list`
+
+
+
 ## Including Plots
 
 You can also embed plots, for example:
