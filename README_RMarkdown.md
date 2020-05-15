@@ -16,3 +16,8 @@
   - after finishing of your file, press "Knit" so it generates the html file in the same folder of your .Rmd file
 - it is better you have a separate .R file with your codes then use source() to call the file in .Rmd file
 - in your Markdown content if you use `r` what ever you write after r will be executed. for example `r 3 + 4` will show 7 in the report
+- define a variable in your R code chunk like below:
+```{r apple, echo=FALSE}
+apple <- 10 /2
+```
+then in your Markdown text, you can use the varaibale like `r apple` that prints 5 in the report
