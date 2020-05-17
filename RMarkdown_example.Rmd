@@ -70,7 +70,12 @@ kable(df)
 
 You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
+```{r plot_example}
+source("test_for_RMarkdown2.R")
+plot(plot_example)
+```
+
+```{r pressure}
 plot(pressure)
 ```
 
