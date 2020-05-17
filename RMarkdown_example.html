@@ -384,10 +384,10 @@ summary {
 
 <div id="r-markdown" class="section level2">
 <h2>R Markdown</h2>
-<p>7</p>
-<p>I have 5 apples.</p>
 <p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
 <p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre class="r"><code>apple &lt;- 10 /2</code></pre>
+<p>I have 5 or 7 apples.</p>
 <pre class="r"><code>summary(cars)</code></pre>
 <pre><code>##      speed           dist       
 ##  Min.   : 4.0   Min.   :  2.00  
@@ -422,6 +422,32 @@ markdown_list &lt;- paste(&quot;-&quot;, animals, collapse = &quot;\n&quot;)</co
 <li>Bears</li>
 <li>Oh mys</li>
 </ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">letters</th>
+<th align="right">numbers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">a</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">b</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">c</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">d</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="including-plots" class="section level2">
 <h2>Including Plots</h2>
