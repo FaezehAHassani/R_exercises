@@ -4,35 +4,23 @@ author: "Faezeh"
 date: "5/13/2020"
 output: html_document
 ---
-```{r kable_example, echo = FALSE}
-library("knitr")
-
-# make a data frame
-letters <- c("a", "b", "c", "d")
-numbers <- 1:4
-df <- datafarme(letters = letters, numbers = numbers)
-
-# return table with kable
-kable(df)
-```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r apple, echo=FALSE}
-apple <- 10 /2
-```
+
 
 ## R Markdown
-
-`r 3 + 4`
-
-I have `r apple` apples.
-
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r apple}
+apple <- 10 /2
+```
+
+I have `r apple` or `r 3 + 4` apples.
 
 ```{r cars}
 summary(cars)
@@ -64,6 +52,18 @@ markdown_list <- paste("-", animals, collapse = "\n")
 ```
 
 `r markdown_list`
+
+```{r kable_example, echo = FALSE}
+library("knitr")
+
+# make a data frame
+letters <- c("a", "b", "c", "d")
+numbers <- 1:4
+df <- data.frame(letters = letters, numbers = numbers)
+
+# return table with kable
+kable(df)
+```
 
 ## Including Plots
 
