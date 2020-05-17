@@ -60,6 +60,7 @@ library("knitr")
 letters <- c("a", "b", "c", "d")
 numbers <- 1:4
 df <- data.frame(letters = letters, numbers = numbers)
+print(df)
 
 # return table with kable
 kable(df)
