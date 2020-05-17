@@ -4,6 +4,17 @@ author: "Faezeh"
 date: "5/13/2020"
 output: html_document
 ---
+```{r kable_example, echo = FALSE}
+library("knitr")
+
+# make a data frame
+letters <- c("a", "b", "c", "d")
+numbers <- 1:4
+df <- datafarme(letters = letters, numbers = numbers)
+
+# return table with kable
+kable(df)
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
