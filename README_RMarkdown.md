@@ -20,4 +20,8 @@
 ```{r apple, echo=FALSE}
 apple <- 10 /2
 ```
-then in your Markdown text, you can use the varaibale like `r apple` that prints 5 in the report
+then in your Markdown text, you can use the variable like `r apple` that prints 5 in the report
+
+- you create .html files with RMarkdown that can be put online for others to view
+- usually the website's homepage file is named with index.html, this should be pushed to the GitHub repository in the root folder
+- click on .html file in your GitHub repo, go to setting, GitHub pages and select source as master branch, after this you are able to use the url http://GITHUB_USERNAME.github.io/REPO_NAME as your website address
