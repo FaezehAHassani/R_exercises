@@ -1,4 +1,4 @@
-########## Reporting with RMarkdown ##########
+########## Reporting with RMarkdown, remember to open and run XQuartz when call this file in .Rmd to be able to open View() function##########
 library("dplyr")
 
 
@@ -12,7 +12,7 @@ life_exp <- read.csv(
 
 View(life_exp)
 
-# find the country with lonest life expectency in 2015
+# find the country with longest life expectancy in 2015
 longest_le <- life_exp %>%
   filter(X2015 == max(X2015, na.rm = T)) %>%
   select(Country.Name, X2015) %>%
