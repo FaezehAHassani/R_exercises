@@ -25,11 +25,11 @@ top_10_gain <- life_exp %>%
   mutate(gain = X2015 - X1960) %>%
   top_n(10, wt = gain) %>% # to filter top 10
   arrange(-gain) %>% # sort gain column from big to small
-  mutate(gain_str = paste(format(round(gain, 1), nsmall =1), "years"))
-  
+  mutate(gain_str = paste(format(round(gain, 1), nsmall =1), "years")) %>%
+  select(Country.Name, gain_str)
 View(top_10_gain)
 
 
   
-  select(Country.Name, gain_formatted)
+  
 
