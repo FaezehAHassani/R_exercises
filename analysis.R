@@ -1,9 +1,14 @@
 ########## Reporting with RMarkdown, remember to open and run XQuartz when call this file in .Rmd to be able to open View() function##########
 library("dplyr")
+
 #install.packages("rworldmap") first time used it but after installation commented it
 library("rworldmap")  # this is for quick mapping to replace ggplot2
-library("RColorBrewer")
 
+install.packages("rworldxtra") # for high resolution maps
+library("rworldxtra")
+
+
+library("RColorBrewer")
 
 ####### plotting Worldbank data from https://data.worldbank.org/indicator/SP.DYN.LE00.IN #####
 life_exp <- read.csv(
@@ -43,7 +48,13 @@ top_10_gain <- life_exp %>%
 
 View(top_10_gain)
 
-
+# use of rworldmap package for mapping
+mapped_data <- joinCountryData2Map(
+  life_exp,
+  joinCode = "ISO3",
+  nameJoinColumn = "Country.Code",
+  mapResolution = "high"
+)
   
   
 
