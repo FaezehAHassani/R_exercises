@@ -4,7 +4,7 @@ library("dplyr")
 #install.packages("rworldmap") first time used it but after installation commented it
 library("rworldmap")  # this is for quick mapping to replace ggplot2
 
-install.packages("rworldxtra") # for high resolution maps
+#install.packages("rworldxtra") # for high resolution maps; note: first time used it but after installation commented it
 library("rworldxtra")
 
 
