@@ -21,6 +21,15 @@ longest_le <- life_exp %>%
 
 View(longest_le)
 
+# find the country with shortest life expectancy in 2015
+shortest_le <- life_exp %>%
+  filter(X2015 == min(X2015, na.rm = T)) %>%
+  select(Country.Name, X2015) %>%
+  mutate(expectancy = round(X2015, 1))
+
+View(shortest_le)
+
+# calculate 
 # add a table on 10 countries with greatest gain in life expectancy
 top_10_gain <- life_exp %>%
   mutate(gain = X2015 - X1960) %>%
