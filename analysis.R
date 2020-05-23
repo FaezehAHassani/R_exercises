@@ -1,6 +1,6 @@
 ########## Reporting with RMarkdown, remember to open and run XQuartz when call this file in .Rmd to be able to open View() function##########
 library("dplyr")
-install.packages("rworldmap")
+#install.packages("rworldmap") first time used it but after installation commented it
 library("rworldmap")  # this is for quick mapping to replace ggplot2
 library("RColorBrewer")
 
