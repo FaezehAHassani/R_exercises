@@ -1,5 +1,5 @@
 ---
-title: "report"
+title: "Report"
 author: "Faezeh"
 date: "5/21/2020"
 output: html_document
@@ -8,6 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 source("analysis.R")
+library("knitr")
 ```
 
 ## R Markdown
@@ -16,3 +17,8 @@ This is an R Markdown document involving analysis.R script.
 
 The data revealed that the country with the longest life expectancy is
 `r longest_le$Country.Name`, with a life expectancy of `r longest_le$expectancy`
+
+```{r top_10_gain, echo = FALSE}
+#show the table with updated columns titles
+kable(top_10_gain, col.names = c("Country", "Change in Life Expectancy"))
+```
