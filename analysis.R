@@ -29,7 +29,10 @@ shortest_le <- life_exp %>%
 
 View(shortest_le)
 
-# calculate 
+# calculate range in life expectancy
+le_difference <- longest_le$expectancy - shortest_le$expectancy
+print(le_difference)
+
 # add a table on 10 countries with greatest gain in life expectancy
 top_10_gain <- life_exp %>%
   mutate(gain = X2015 - X1960) %>%
