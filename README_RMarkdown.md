@@ -25,3 +25,10 @@ then in your Markdown text, you can use the variable like `r apple` that prints 
 - you create .html files with RMarkdown that can be put online for others to view
 - usually the website's homepage file is named with index.html, this should be pushed to the GitHub repository in the root folder
 - click on .html file in your GitHub repo, go to setting, GitHub pages and select source as master branch, after this you are able to use the url http://GITHUB_USERNAME.github.io/REPO_NAME as your website address
+- in order to justify text you can add below codes after the header
+`<style>
+body {
+text-align: justify}
+</style>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`
