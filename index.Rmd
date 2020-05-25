@@ -23,3 +23,9 @@ Here are the countries whose life expectancy **improved the most** since 1960.
 #show the table with updated columns titles
 kable(top_10_gain, col.names = c("Country", "Change in Life Expectancy"))
 ```
+
+# Life expectancy in 2015
+To identify geographic variations in life expectancy, here is a choropleth map of life expectancy in 2015:
+
+```{r le_map, echo = FALSE}
+# create a render map using `rworldmap` package
