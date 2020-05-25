@@ -4,7 +4,6 @@ author: "Faezeh A. Hassani"
 date: "5/21/2020"
 output: html_document
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 source("analysis.R")
@@ -12,7 +11,9 @@ library("knitr")
 ```
 
 ## Overview
-This is a brief report regarding life expectancy for each country from 1960 to 2015. (Source: https://data.worldbank.org/indicator/SP.DYN.LE00.IN). 
+This is a brief report regarding life expectancy for each country from 1960 to 2015. 
+
+(Source: https://data.worldbank.org/indicator/SP.DYN.LE00.IN). 
 
 The data revealed that the country with the longest life expectancy is
 `r longest_le$Country.Name`, with a life expectancy of `r longest_le$expectancy`
