@@ -29,3 +29,12 @@ To identify geographic variations in life expectancy, here is a choropleth map o
 
 ```{r le_map, echo = FALSE}
 # create a render map using `rworldmap` package
+mapCountryData(
+  mapped_data,
+  mapTitle = "Life Expectancy in 2015",
+  nameColumnToPlot = "X2015",
+  addLegend = F, # exclude legend
+  colourPalette = brewer.pal(7, "Blues")
+)
+```
+
