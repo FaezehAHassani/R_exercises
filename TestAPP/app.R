@@ -14,15 +14,17 @@ my_ui <- fluidPage(
     # a second level header
     h2("Greetings from Shiny"),
     # a widget
-    textInput(inputId = "sername", label = "What is your name?"),
+    textInput(inputId = "username", label = "What is your name?"),
     # an output element
     textOutput(outputId = "message")
 )
 
-# server takes inpute and output arguments
+# server takes input and output arguments
+my_server <- function(input, output) {
+    output$message <- renderText({
+        message_str <- paste0("Hello ", input$username, "!")
+        message_str
+    })
+}
 
-
-
-
-
-shinyApp(ui = my_ui)
+shinyApp(ui = my_ui, server = my_server)
