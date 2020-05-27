@@ -9,3 +9,4 @@
   - reactive output
   - render function
   - reactivity
+- once you created a new file/ Shiny Web App, you name the folder under which you can save your web app as app.R
