@@ -10,3 +10,13 @@
   - render function
   - reactivity
 - once you created a new file/ Shiny Web App, you name the folder under which you can save your web app as app.R
+
+# some commands to add static content to your webpage
+
+- h1("heading 1") : a first-level heading
+- h2("heading 2") : a second-level heading
+- p("some text") : a paragraph of plain text
+- em("some text") : italic text
+- strong("some text") : bold text
+- a("some text", href = 'url') : a hyperlink
+- img("description", src = "path") : an image
