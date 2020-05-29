@@ -25,6 +25,19 @@ my_ui <- fluidPage(
     textOutput(outputId = "message")
 )
 
+list(ui = fluidPage(
+    selectInput('website', 'Choose a website'
+                , list(bbc = "http://www.bbc.co.uk"
+                       , google = "http://www.google.com"
+                       , cnn = "http://www.cnn.com")
+    )
+    , htmlOutput("mySite")
+)
+,server = function(input, output, session){
+    output$mySite <- renderUI({
+        tags$a(href = input$website, input$website)
+    })
+})
 # server takes input and output arguments
 my_server <- function(input, output) {
     output$message <- renderText({
@@ -34,3 +47,5 @@ my_server <- function(input, output) {
 }
 
 shinyApp(ui = my_ui, server = my_server)
+
+
