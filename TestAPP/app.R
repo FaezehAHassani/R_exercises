@@ -22,22 +22,17 @@ my_ui <- fluidPage(
     # a widget
     textInput(inputId = "username", label = "Tell me your name?"),
     # an output element
-    textOutput(outputId = "message")
+    textOutput(outputId = "message"),
+    # make a slider widget
+    sliderInput(
+        inputId = "age",
+        label = "Do you mind if I ask your age?",
+        min = 18,
+        max = 80,
+        value = 42
+    )
 )
 
-list(ui = fluidPage(
-    selectInput('website', 'Choose a website'
-                , list(bbc = "http://www.bbc.co.uk"
-                       , google = "http://www.google.com"
-                       , cnn = "http://www.cnn.com")
-    )
-    , htmlOutput("mySite")
-)
-,server = function(input, output, session){
-    output$mySite <- renderUI({
-        tags$a(href = input$website, input$website)
-    })
-})
 # server takes input and output arguments
 my_server <- function(input, output) {
     output$message <- renderText({
