@@ -32,3 +32,11 @@
   - inputId (a string/name): that allows the server to access the widget
   - label (a string) : it will be shown alongside the widget
   - slider input requires a min, max, and starting value
+
+# dynamic output
+
+- textOutput() : display a plain text
+- tableOutput() : display a data table similar to kable in RMarkdown
+- plotOutput() : display a graphical output similar to ggplot
+- verbatimTextOutput() : display content as formatted code block
+- the above take outputId(a name)
