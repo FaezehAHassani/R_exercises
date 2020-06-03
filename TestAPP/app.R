@@ -21,8 +21,6 @@ my_ui <- fluidPage(
     a(strong("LinkedIn: "), "You can learn more about me by clicking here.", href = "https://www.linkedin.com/in/faezeh-arab-hassani-11318317b/"),
     # a widget
     textInput(inputId = "username", label = "Tell me your name?"),
-    # an output element
-    textOutput(outputId = "message"),
     # make a slider widget
     sliderInput(
         inputId = "age",
@@ -30,13 +28,15 @@ my_ui <- fluidPage(
         min = 18,
         max = 80,
         value = 42
-    )
+    ),
+    # an output element
+    textOutput(outputId = "message")
 )
 
 # server takes input and output arguments
 my_server <- function(input, output) {
     output$message <- renderText({
-        message_str <- paste0("Hello ", input$username, "!")
+        message_str <- paste0("Hello ", input$username, ", ", "you ", "are ", input$age, " years ", "old!")
         message_str
     })
 }
