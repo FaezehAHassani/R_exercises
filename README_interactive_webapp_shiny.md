@@ -21,7 +21,7 @@
 - a("some text", href = 'url') : a hyperlink
 - img("description", src = "path") : an image
 
-# dynamic inputs
+# dynamic inputs for basic widget
 
 - textInput() : creates a box that user can enter textInput
 - sliderInput(): creates a slider
@@ -29,4 +29,6 @@
 - checkboxInput() : creates a box that user can check
 - radioButtons() : creates radio radioButtons
 - the above take two arguments:
-  -  
+  - inputId (a string/name): that allows the server to access the widget
+  - label (a string) : it will be shown alongside the widget
+  - slider input requires a min, max, and starting value
