@@ -20,3 +20,13 @@
 - strong("some text") : bold text
 - a("some text", href = 'url') : a hyperlink
 - img("description", src = "path") : an image
+
+# dynamic inputs
+
+- textInput() : creates a box that user can enter textInput
+- sliderInput(): creates a slider
+- selectInput() : creates a dropdown menu
+- checkboxInput() : creates a box that user can check
+- radioButtons() : creates radio radioButtons
+- the above take two arguments:
+  -  
