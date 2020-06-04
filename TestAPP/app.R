@@ -30,7 +30,17 @@ my_ui <- fluidPage(
         value = 42
     ),
     # an output element
-    textOutput(outputId = "message")
+    textOutput(outputId = "message"),
+    # layout
+    sidebarLayout(
+        sidebarPanel(
+            p("Sidebar panel content goes here")
+        ),
+        mainPanel(
+            p("Main panel content goes here"),
+            p("Layouts usually include multiple content elements")
+        )
+    )
 )
 
 # server takes input and output arguments
