@@ -40,3 +40,8 @@
 - plotOutput() : display a graphical output similar to ggplot
 - verbatimTextOutput() : display content as formatted code block
 - the above take outputId(a name)
+
+# layout
+
+- sidebarLayout() organizes content into two columns: sidebar and main section
+- its requires two arguments: sidebarPanel() to mention the contents for sidebar and a mainPanel() that contains the content for main section
