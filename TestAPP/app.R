@@ -12,7 +12,10 @@ library(shiny)
 # call a fluidpage()
 my_ui <- fluidPage(
      # layout
-    sidebarLayout(
+    page_one <- tabPanel(
+        "Home",
+        titlePanel("Short Bio"),
+        sidebarLayout(
         sidebarPanel(
             p("Let me know you better!"),
             # a widget
@@ -39,7 +42,7 @@ my_ui <- fluidPage(
             a(strong("LinkedIn: "), "You can learn more about me by clicking here.", href = "https://www.linkedin.com/in/faezeh-arab-hassani-11318317b/")
         )
     )
-)
+))
 
 # server takes input and output arguments
 my_server <- function(input, output) {
