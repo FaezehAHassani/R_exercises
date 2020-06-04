@@ -41,8 +41,18 @@ my_ui <- fluidPage(
             # my linkedin page
             a(strong("LinkedIn: "), "You can learn more about me by clicking here.", href = "https://www.linkedin.com/in/faezeh-arab-hassani-11318317b/")
         )
+        )
     )
-))
+)
+page_two <- tabPanel(
+    "Publications"
+)
+
+my_ui <- navbarPage(
+    "My webpage",
+    page_one,
+    page_two
+)   
 
 # server takes input and output arguments
 my_server <- function(input, output) {
