@@ -46,3 +46,10 @@
 - sidebarLayout() organizes content into two columns: sidebar and main section
 - its requires two arguments: sidebarPanel() to mention the contents for sidebar and a mainPanel() that contains the content for main section
 - you can use tabPanel() to assign several tab pages to a variable for an easier review
+
+# render function (server) based on above dynamic outputId
+
+- renderText()
+- renderTable() or renderDataTable()
+- renderPlot() or renderPlotly()
+- renderLeaflet() : an interactive leaflet map
