@@ -49,7 +49,7 @@
 
 # render function (server) based on above dynamic outputId
 
-- renderText()
-- renderTable() or renderDataTable()
-- renderPlot() or renderPlotly()
+- renderText() : unformatted text
+- renderTable() : a simple data table; or renderDataTable() : an interactive data table using DT package
+- renderPlot() : a graphical plot with ggplot2; or renderPlotly() : an interactive Plotly plot
 - renderLeaflet() : an interactive leaflet map
