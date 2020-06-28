@@ -71,7 +71,7 @@ my_ui <- navbarPage(
 # server takes input and output arguments
 my_server <- function(input, output) {
     output$message <- renderText({
-        message_str <- paste0("Hello ", input$username, ", ", "you ", "are ", input$age, " years ", "old!")
+        message_str <- paste0("Hello ", input$username, ", ", "you ", "are ", input$age, " years ", "old!", " My name is Faezeh Arab Hassani.")
         message_str
     })
 }
