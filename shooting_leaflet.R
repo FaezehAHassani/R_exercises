@@ -2,6 +2,7 @@
 ------------------------------------------
   
 library("leaflet")
+library("dplyr")
 
 ------------------------------------------
 
@@ -28,3 +29,12 @@ leaflet(data = shootings) %>%
     values = shootings[["race"]],
     opacity = 1
     )
+
+table <- shootings %>%
+  group_by(shootings[["race"]]) %>%
+  count() %>%
+  arrange(-n)
+
+colnames(table) <- c("race", "Number of Victims")
+
+View(table)
