@@ -20,4 +20,11 @@ leaflet(data = shootings) %>%
     fillOpacity = 0.7,
     radius =  4,
     stroke = FALSE
-  )
+  ) %>%
+  addLegend(
+    position = "bottomright",
+    title = "race",
+    pal = palette_fn,
+    values = shootings[["race"]],
+    opacity = 1
+    )
