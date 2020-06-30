@@ -57,3 +57,7 @@ my_ui <- fluidPage(
     )
   )  
 )  
+
+server <- function(input, output) {
+  
+}
