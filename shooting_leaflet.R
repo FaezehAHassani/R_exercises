@@ -38,3 +38,16 @@ table <- shootings %>%
 colnames(table) <- c("race", "Number of Victims")
 
 View(table)
+
+my_ui <- fluidPage(
+  titlePanel("Fatal Police Shootings"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(
+        inputId = "analysis_var",
+        label = "Level of nalysis",
+        choices = c("gender", "race", "body_camera", "threat_level")
+      )
+    ),
+  
