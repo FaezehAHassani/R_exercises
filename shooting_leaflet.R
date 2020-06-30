@@ -50,4 +50,10 @@ my_ui <- fluidPage(
         choices = c("gender", "race", "body_camera", "threat_level")
       )
     ),
-  
+    
+    mainPanel(
+      leafletOutput(outputId = "shooting_map"),
+      tableOutput(outputId = "grouped_table")
+    )
+  )  
+)  
