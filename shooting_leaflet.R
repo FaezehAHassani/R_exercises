@@ -61,3 +61,5 @@ my_ui <- fluidPage(
 server <- function(input, output) {
   
 }
+
+shinyApp(ui = my_ui, server = server)
