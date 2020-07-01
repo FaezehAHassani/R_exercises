@@ -58,8 +58,13 @@ my_ui <- fluidPage(
   )  
 )  
 
-server <- function(input, output) {
+my_server <- function(input, output) {
+  output$shooting_map <- colorConverter(
+    palette = "Dark2",
+    domain = shootings[[input$analysis_var]]
+  )
   
+  leaflet(data = shootings) %>%
 }
 
 shinyApp(ui = my_ui, server = server)
