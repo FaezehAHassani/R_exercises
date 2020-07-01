@@ -17,7 +17,7 @@ my_ui <- fluidPage(
     sidebarPanel(
       selectInput(
         inputId = "analysis_var",
-        label = "Level of nalysis",
+        label = "Level of analysis",
         choices = c("gender", "race", "body_camera", "threat_level")
       )
     ),
@@ -49,7 +49,7 @@ my_server <- function(input, output) {
       ) %>%
       addLegend(
         position = "bottomright",
-        title = "race",
+        title = input$analysis_var,
         pal = palette_fn,
         values = shootings[[input$analysis_var]],
         opacity = 1
