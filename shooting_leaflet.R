@@ -61,13 +61,10 @@ my_server <- function(input, output) {
       group_by(shootings[[input$analysis_var]]) %>%
       count() %>%
       arrange(-n)
-    
-    colnames(table) <- c(input$analysis_var, "Number of Victims"),
+    View(table)
+    colnames(table) <- c(input$analysis_var, "Number of Victims")
     table
   })
 } 
   
-  View(table)
- 
-
-shinyApp(ui = my_ui, server = server)
+shinyApp(ui = my_ui, server = my_server)
