@@ -1,11 +1,11 @@
 # map of fatal police shooting using leaflet
-------------------------------------------
+#------------------------------------------
   
-library("leaflet")
-library("dplyr")
-library("leaflet")
+library(shiny)
+library(leaflet)
+library(dplyr)
 
-------------------------------------------
+#------------------------------------------
 
 shootings <- read.csv("data/police_shootings.csv", stringsAsFactors = FALSE)
 View(shootings)
