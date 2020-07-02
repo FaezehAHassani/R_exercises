@@ -40,3 +40,4 @@ Push => git push => enter user and pass => refresh GitHub account to see changes
 - `git log`: shows messages of my previous commits
 - `git log`: shows above in a better look
 - `git commit -m "message": put a message on my committed file
+- `git log --oneline`: shows the recent commits in your project directory, each commit is presented with a "hash" number
