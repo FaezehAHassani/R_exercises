@@ -42,4 +42,6 @@ Push => git push => enter user and pass => refresh GitHub account to see changes
 - `git commit -m "message": put a message on my committed file
 - `git log --oneline`: shows the recent commits in your project directory, each commit is presented with a "hash" number
 - `git branch`: shows all the available branches in your directory
-- `git branch experiment`: to make a new branch named "experiment"
+- `git branch experiment`: to make a new branch named "experiment" & `git checkout experiment`: to switch to the branch "experiment"
+- `git checkout -b experiment`: do the above two separate commands simultaneously
+-  `git commit -am "Update README"`: this will commit changes only to the branch, nothing changes in the master branch version
