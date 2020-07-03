@@ -1,4 +1,5 @@
-I want to check how branching works.
+<<<<<<<<<<
+I want to check how branching work (change2).
 
 First you make a new branch named as experiment and enter the branch by: git checkout -b experiment
 
