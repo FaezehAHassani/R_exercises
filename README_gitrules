@@ -47,4 +47,5 @@ Push => git push => enter user and pass => refresh GitHub account to see changes
 -  `git commit -am "Update README"`: this will commit changes only to the branch, nothing changes in the master branch version
 - remember to commit all changes in your branch before checking out to the master branch again
 - `git branch -d experiment`: to delete the branch "experiment"
-- first check you are in master branch with:  `git checkout master`, then `git merge experiment`: to merge changes you committed in experiment branch with the same file in master branch 
+- first check you are in master branch with:  `git checkout master`, then `git merge experiment`: to merge changes you committed in experiment branch with the same file in master branch
+- `git merge --abort`: to cancel merge due to conflict
