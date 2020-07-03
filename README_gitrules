@@ -49,3 +49,5 @@ Push => git push => enter user and pass => refresh GitHub account to see changes
 - `git branch -d experiment`: to delete the branch "experiment"
 - first check you are in master branch with:  `git checkout master`, then `git merge experiment`: to merge changes you committed in experiment branch with the same file in master branch
 - `git merge --abort`: to cancel merge due to conflict
+- from Code tab in your GitHub repo clone a project
+- use `git pull origin master` to get changes in the repo, changes will be merged with your local repo, fix the conflicts, use `git add .` and `git commit --no-edit` or changes and then `git push origin master` to add your changes   
