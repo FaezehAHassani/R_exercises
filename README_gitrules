@@ -51,4 +51,5 @@ Push => git push => enter user and pass => refresh GitHub account to see changes
 - `git merge --abort`: to cancel merge due to conflict
 - from Code tab in your GitHub repo clone a project
 - use `git pull origin master` to get changes in the repo, changes will be merged with your local repo, fix the conflicts, use `git add .` and `git commit --no-edit` using a default commit message or common `git commit -m "your message"` to apply your changes and then `git push origin master` to add your changes
-- use `git push -u origin "your new branch/feature"` to push new branch enabling tracking 
+- use `git push -u origin "your new branch/feature"` to push new branch enabling tracking
+- use `git fetch origin` to download commits from GitHub without merging
