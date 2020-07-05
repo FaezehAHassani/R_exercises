@@ -54,3 +54,7 @@ Push => git push => enter user and pass => refresh GitHub account to see changes
 - use `git push -u origin "your new branch/feature"` to push new branch enabling tracking
 - use `git fetch origin` to download commits from GitHub without merging
 - `git branch -d "your branch name without quotations"` to delete the branch
+
+# for collaboration on a git project
+1- fork a repository
+2- clone it on you local machine
