@@ -60,3 +60,4 @@ Push => git push => enter user and pass => refresh GitHub account to see changes
 2- clone it on you local machine
 3- Do your changes, add, commit, and push them
 4- send a pull request to the owner of original repo
+5- they review your code, may comment, you can update the comment, commit and push (automatically been updated in the previous pull request)
