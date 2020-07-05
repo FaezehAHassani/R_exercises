@@ -58,3 +58,5 @@ Push => git push => enter user and pass => refresh GitHub account to see changes
 # for collaboration on a git project
 1- fork a repository
 2- clone it on you local machine
+3- Do your changes, add, commit, and push them
+4- send a pull request to the owner of original repo
